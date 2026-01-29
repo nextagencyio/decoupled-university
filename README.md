@@ -44,11 +44,11 @@ npm run setup-content
 
 This imports the university content types and sample content:
 - Homepage with statistics and CTAs
-- Academic Programs (CS, Business, Nursing)
-- Faculty Members
-- Events (Open House, Commencement)
-- News Articles
-- Static Pages (About, Admissions)
+- 6 Academic Programs (Computer Science, Psychology, Mechanical Engineering, English Literature, Finance, Biology)
+- 2 Faculty Members
+- 2 Events (Open House, Commencement)
+- 2 News Articles
+- 2 Static Pages (About, Admissions)
 
 ### 5. Start development
 
