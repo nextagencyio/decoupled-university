@@ -68,11 +68,11 @@ export default async function FacultyMemberPage({ params }: PageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-12 md:py-16">
+      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             href="/faculty"
-            className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center text-purple-200 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Faculty
@@ -110,7 +110,7 @@ export default async function FacultyMemberPage({ params }: PageProps) {
               )}
 
               {faculty.department && faculty.department.length > 0 && (
-                <div className="flex items-center text-blue-200 mb-6">
+                <div className="flex items-center text-purple-200 mb-6">
                   <Building className="w-5 h-5 mr-2" />
                   {faculty.department[0].name}
                 </div>
@@ -147,7 +147,7 @@ export default async function FacultyMemberPage({ params }: PageProps) {
               {/* Research Interests */}
               {faculty.researchInterests && faculty.researchInterests.length > 0 && (
                 <div>
-                  <h3 className="text-sm font-semibold text-blue-200 mb-3 flex items-center gap-2">
+                  <h3 className="text-sm font-semibold text-purple-200 mb-3 flex items-center gap-2">
                     <BookOpen className="w-4 h-4" />
                     Research Interests
                   </h3>
@@ -155,7 +155,7 @@ export default async function FacultyMemberPage({ params }: PageProps) {
                     {faculty.researchInterests.map((interest, index) => (
                       <span
                         key={index}
-                        className="inline-block bg-amber-500 text-blue-900 px-3 py-1 rounded-full text-sm font-medium"
+                        className="inline-block bg-amber-500 text-purple-900 px-3 py-1 rounded-full text-sm font-medium"
                       >
                         {interest}
                       </span>

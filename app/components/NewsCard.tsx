@@ -40,7 +40,7 @@ export default function NewsCard({ news, featured = false }: NewsCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
           {news.category && news.category.length > 0 && (
-            <span className="inline-block bg-amber-500 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold mb-3">
+            <span className="inline-block bg-amber-500 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold mb-3">
               {news.category[0].name}
             </span>
           )}
@@ -75,12 +75,12 @@ export default function NewsCard({ news, featured = false }: NewsCardProps) {
             targetWidth={400}
           />
         ) : (
-          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600">
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-amber-500 to-orange-600">
             <Newspaper className="w-12 h-12 text-white/30" />
           </div>
         )}
         {news.featured && (
-          <div className="absolute top-4 right-4 bg-amber-500 text-blue-900 px-2 py-1 rounded text-xs font-bold">
+          <div className="absolute top-4 right-4 bg-amber-500 text-purple-900 px-2 py-1 rounded text-xs font-bold">
             Featured
           </div>
         )}
@@ -88,12 +88,12 @@ export default function NewsCard({ news, featured = false }: NewsCardProps) {
 
       <div className="p-6">
         {news.category && news.category.length > 0 && (
-          <span className="inline-block text-blue-600 text-sm font-medium mb-2">
+          <span className="inline-block text-purple-700 text-sm font-medium mb-2">
             {news.category[0].name}
           </span>
         )}
 
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors line-clamp-2">
           {news.title}
         </h3>
 
@@ -108,7 +108,7 @@ export default function NewsCard({ news, featured = false }: NewsCardProps) {
             <Calendar className="w-4 h-4 mr-2" />
             {formatDate(news.created.timestamp)}
           </div>
-          <span className="flex items-center text-blue-600 font-medium group-hover:gap-1 transition-all">
+          <span className="flex items-center text-purple-700 font-medium group-hover:gap-1 transition-all">
             Read more
             <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
           </span>

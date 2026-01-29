@@ -93,7 +93,7 @@ export default function Contact() {
                       type="text"
                       id="firstName"
                       name="firstName"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                       required
                     />
                   </div>
@@ -105,7 +105,7 @@ export default function Contact() {
                       type="text"
                       id="lastName"
                       name="lastName"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                       required
                     />
                   </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                     required
                   />
                 </div>
@@ -132,7 +132,7 @@ export default function Contact() {
                     type="text"
                     id="subject"
                     name="subject"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                     required
                   />
                 </div>
@@ -145,7 +145,7 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-blue-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500"
                     placeholder="Tell us how we can help you..."
                     required
                   />
@@ -154,7 +154,7 @@ export default function Contact() {
                 <div>
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-md hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-3 px-4 rounded-md hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
                   >
                     Send Message
                   </button>
@@ -164,7 +164,7 @@ export default function Contact() {
           </div>
 
           {/* Additional Information */}
-          <div className="mt-8 md:mt-12 bg-blue-50 rounded-lg p-6 md:p-8">
+          <div className="mt-8 md:mt-12 bg-purple-50 rounded-lg p-6 md:p-8">
             <div className="text-center">
               <h2 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4">Need Immediate Help?</h2>
               <p className="text-sm md:text-base text-gray-600 mb-6">
@@ -173,13 +173,13 @@ export default function Contact() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 text-purple-600 rounded-md hover:bg-gradient-to-r from-blue-600 to-purple-600 hover:text-white transition-colors duration-200 font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 border border-purple-600 text-purple-600 rounded-md hover:bg-purple-600 hover:text-white transition-colors duration-200 font-medium"
                 >
                   View Documentation
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md hover:from-blue-700 hover:to-purple-700 transition-colors duration-200 font-medium"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-md hover:from-purple-700 hover:to-indigo-700 transition-colors duration-200 font-medium"
                 >
                   Join Community
                 </a>

@@ -77,7 +77,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+      <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
         {news.image?.url && (
           <div className="absolute inset-0 opacity-30">
             <ResponsiveImage
@@ -93,7 +93,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Link
             href="/news"
-            className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center text-purple-200 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to News
@@ -101,7 +101,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
           <div className="flex flex-wrap items-center gap-4 mb-6">
             {news.category && news.category.length > 0 && (
-              <span className="inline-flex items-center bg-amber-500 text-blue-900 px-4 py-2 rounded-full text-sm font-bold">
+              <span className="inline-flex items-center bg-amber-500 text-purple-900 px-4 py-2 rounded-full text-sm font-bold">
                 <Tag className="w-4 h-4 mr-2" />
                 {news.category[0].name}
               </span>
@@ -117,7 +117,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
             {news.title}
           </h1>
 
-          <div className="flex items-center text-blue-200">
+          <div className="flex items-center text-purple-200">
             <Calendar className="w-5 h-5 mr-2" />
             {formatDate(news.created.timestamp)}
           </div>
@@ -145,7 +145,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           {news.body?.processed && (
             <article className="bg-white rounded-xl shadow-sm p-8 md:p-12">
               <div
-                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-blue-600"
+                className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-purple-700"
                 dangerouslySetInnerHTML={{ __html: news.body.processed }}
               />
             </article>
@@ -156,7 +156,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
             <div className="flex items-center justify-between">
               <Link
                 href="/news"
-                className="text-blue-600 hover:text-blue-700 font-medium flex items-center"
+                className="text-purple-700 hover:text-purple-700 font-medium flex items-center"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 More News
@@ -165,7 +165,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
               {news.category && news.category.length > 0 && (
                 <div className="flex items-center gap-2">
                   <span className="text-gray-500 text-sm">Category:</span>
-                  <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">
                     {news.category[0].name}
                   </span>
                 </div>

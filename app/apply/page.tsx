@@ -38,21 +38,21 @@ export default function ApplyPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-6">
-              <GraduationCap className="w-8 h-8 text-blue-900" />
+              <GraduationCap className="w-8 h-8 text-purple-900" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Start Your Journey
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto mb-8">
               Join our community of scholars, innovators, and leaders. Your future begins here at Decoupled University.
             </p>
             <a
               href="#apply-now"
-              className="inline-flex items-center px-8 py-4 bg-amber-500 text-blue-900 rounded-lg hover:bg-amber-400 transition-colors font-bold text-lg"
+              className="inline-flex items-center px-8 py-4 bg-amber-500 text-purple-900 rounded-lg hover:bg-amber-400 transition-colors font-bold text-lg"
             >
               Begin Application
               <ArrowRight className="ml-2 w-5 h-5" />
@@ -72,10 +72,10 @@ export default function ApplyPage() {
                 <div key={index} className="relative">
                   <div className="bg-white rounded-xl shadow-sm p-8 h-full">
                     <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <Icon className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-purple-700" />
                       </div>
-                      <span className="text-4xl font-bold text-blue-100">{index + 1}</span>
+                      <span className="text-4xl font-bold text-purple-100">{index + 1}</span>
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
                     <p className="text-gray-600">{step.description}</p>
@@ -120,22 +120,22 @@ export default function ApplyPage() {
       {/* Apply CTA */}
       <section id="apply-now" className="py-16 md:py-20 bg-amber-500">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-purple-900 mb-6">
             Ready to Apply?
           </h2>
-          <p className="text-lg text-blue-800 mb-8">
+          <p className="text-lg text-purple-800 mb-8">
             This is a demo university template. In a real application, this would link to your application portal.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-white rounded-lg font-bold text-lg hover:bg-blue-800 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-purple-900 text-white rounded-lg font-bold text-lg hover:bg-purple-800 transition-colors"
             >
               Undergraduate Application
             </a>
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-900 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
             >
               Graduate Application
             </a>

@@ -40,8 +40,8 @@ export default function StatsSection({ homepageContent }: StatsSectionProps) {
                 return (
                   <div key={stat.id} className="text-center">
                     <div className="flex justify-center mb-4">
-                      <div className="p-3 bg-blue-100 rounded-full">
-                        <Icon className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+                      <div className="p-3 bg-purple-100 rounded-full">
+                        <Icon className="w-6 h-6 md:w-8 md:h-8 text-purple-700" />
                       </div>
                     </div>
                     <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
@@ -59,8 +59,8 @@ export default function StatsSection({ homepageContent }: StatsSectionProps) {
                 return (
                   <div key={index} className="text-center">
                     <div className="flex justify-center mb-4">
-                      <div className="p-3 bg-blue-100 rounded-full">
-                        <Icon className="w-6 h-6 md:w-8 md:h-8 text-blue-600" />
+                      <div className="p-3 bg-purple-100 rounded-full">
+                        <Icon className="w-6 h-6 md:w-8 md:h-8 text-purple-700" />
                       </div>
                     </div>
                     <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">

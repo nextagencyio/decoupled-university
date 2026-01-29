@@ -37,10 +37,10 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
-            <div className="flex-shrink-0 w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center">
+            <div className="flex-shrink-0 w-10 h-10 bg-purple-900 rounded-lg flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-amber-400" />
             </div>
-            <span className="text-lg font-bold text-blue-900 hidden sm:block">
+            <span className="text-lg font-bold text-purple-900 hidden sm:block">
               Decoupled University
             </span>
           </Link>
@@ -54,7 +54,7 @@ export default function Header() {
                 className={clsx(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors',
                   activeTab === item.name
-                    ? 'bg-blue-50 text-blue-900'
+                    ? 'bg-purple-50 text-purple-900'
                     : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                 )}
               >
@@ -67,7 +67,7 @@ export default function Header() {
           <div className="flex items-center space-x-4">
             <Link
               href="/apply"
-              className="hidden sm:inline-flex items-center bg-amber-500 text-blue-900 px-5 py-2 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-sm"
+              className="hidden sm:inline-flex items-center bg-amber-500 text-purple-900 px-5 py-2 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-sm"
             >
               Apply Now
             </Link>
@@ -100,7 +100,7 @@ export default function Header() {
                   className={clsx(
                     'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                     activeTab === item.name
-                      ? 'bg-blue-50 text-blue-900'
+                      ? 'bg-purple-50 text-purple-900'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   )}
                 >
@@ -110,7 +110,7 @@ export default function Header() {
               <Link
                 href="/apply"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mx-4 mt-4 text-center bg-amber-500 text-blue-900 px-5 py-3 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-sm"
+                className="mx-4 mt-4 text-center bg-amber-500 text-purple-900 px-5 py-3 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-sm"
               >
                 Apply Now
               </Link>

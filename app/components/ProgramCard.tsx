@@ -16,7 +16,7 @@ export default function ProgramCard({ program, featured = false }: ProgramCardPr
         featured ? 'ring-2 ring-amber-400' : ''
       }`}
     >
-      <div className="relative h-48 bg-gradient-to-br from-blue-600 to-indigo-700">
+      <div className="relative h-48 bg-gradient-to-br from-purple-600 to-indigo-700">
         {program.image?.url ? (
           <ResponsiveImage
             src={program.image.url}
@@ -32,12 +32,12 @@ export default function ProgramCard({ program, featured = false }: ProgramCardPr
           </div>
         )}
         {program.degreeType && (
-          <div className="absolute top-4 left-4 bg-amber-500 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
+          <div className="absolute top-4 left-4 bg-amber-500 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold">
             {program.degreeType}
           </div>
         )}
         {featured && (
-          <div className="absolute top-4 right-4 bg-blue-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
+          <div className="absolute top-4 right-4 bg-purple-900 text-white px-3 py-1 rounded-full text-xs font-semibold">
             Featured
           </div>
         )}
@@ -45,12 +45,12 @@ export default function ProgramCard({ program, featured = false }: ProgramCardPr
 
       <div className="p-6">
         {program.department && program.department.length > 0 && (
-          <div className="text-sm text-blue-600 font-medium mb-2">
+          <div className="text-sm text-purple-700 font-medium mb-2">
             {program.department[0].name}
           </div>
         )}
 
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors">
           {program.title}
         </h3>
 
@@ -75,7 +75,7 @@ export default function ProgramCard({ program, featured = false }: ProgramCardPr
           )}
         </div>
 
-        <div className="flex items-center text-blue-600 font-medium group-hover:gap-2 transition-all">
+        <div className="flex items-center text-purple-700 font-medium group-hover:gap-2 transition-all">
           Learn more
           <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
         </div>

@@ -9,7 +9,7 @@ export default function HeroSection({ homepageContent }: HeroSectionProps) {
   const hasHomepageContent = homepageContent && homepageContent.title
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+    <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -35,7 +35,7 @@ export default function HeroSection({ homepageContent }: HeroSectionProps) {
             )}
           </h1>
 
-          <div className="text-lg md:text-xl lg:text-2xl text-blue-100 mb-8 md:mb-10 max-w-3xl mx-auto">
+          <div className="text-lg md:text-xl lg:text-2xl text-purple-100 mb-8 md:mb-10 max-w-3xl mx-auto">
             {hasHomepageContent && homepageContent.heroDescription?.processed ? (
               <div dangerouslySetInnerHTML={{ __html: homepageContent.heroDescription.processed }} />
             ) : (
@@ -46,7 +46,7 @@ export default function HeroSection({ homepageContent }: HeroSectionProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/programs"
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-blue-900 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-lg shadow-lg hover:shadow-xl"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-500 text-purple-900 rounded-lg hover:bg-amber-400 transition-colors duration-200 font-bold text-lg shadow-lg hover:shadow-xl"
             >
               Explore Programs
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,7 +55,7 @@ export default function HeroSection({ homepageContent }: HeroSectionProps) {
             </Link>
             <Link
               href="/about"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200 font-semibold text-lg"
+              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-purple-900 transition-colors duration-200 font-semibold text-lg"
             >
               Learn More
             </Link>

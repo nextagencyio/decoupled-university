@@ -65,7 +65,7 @@ export default function SetupGuide({ missingVars }: SetupGuideProps) {
                       title="Copy variable name"
                     >
                       {copiedVar === varName ? (
-                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <CheckCircle className="w-4 h-4 text-purple-500" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}
@@ -96,27 +96,27 @@ export default function SetupGuide({ missingVars }: SetupGuideProps) {
             </h3>
             <ol className="space-y-2 text-sm text-gray-700">
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">1</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">1</span>
                 Get your values from your Drupal homepage
               </li>
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">2</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">2</span>
                 Go to your Vercel dashboard
               </li>
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">3</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">3</span>
                 Select your project
               </li>
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">4</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">4</span>
                 Go to Settings → Environment Variables
               </li>
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">5</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">5</span>
                 Copy and paste each variable from your Drupal site
               </li>
               <li className="flex items-start">
-                <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">6</span>
+                <span className="bg-gradient-to-r from-amber-500 to-purple-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">6</span>
                 Redeploy your app
               </li>
             </ol>

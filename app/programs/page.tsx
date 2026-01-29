@@ -58,16 +58,16 @@ export default async function ProgramsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-6">
-              <GraduationCap className="w-8 h-8 text-blue-900" />
+              <GraduationCap className="w-8 h-8 text-purple-900" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Academic Programs
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
               Discover world-class education across diverse disciplines. Our programs combine rigorous academics with hands-on experience to prepare you for success.
             </p>
           </div>
@@ -113,15 +113,15 @@ export default async function ProgramsPage() {
       {/* CTA Section */}
       <section className="bg-amber-500 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-purple-900 mb-4">
             Not sure which program is right for you?
           </h2>
-          <p className="text-blue-800 mb-6 max-w-2xl mx-auto">
+          <p className="text-purple-800 mb-6 max-w-2xl mx-auto">
             Our admissions counselors are here to help you find the perfect fit for your academic and career goals.
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center px-8 py-4 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors font-bold"
+            className="inline-flex items-center px-8 py-4 bg-purple-900 text-white rounded-lg hover:bg-purple-800 transition-colors font-bold"
           >
             Talk to an Advisor
           </a>

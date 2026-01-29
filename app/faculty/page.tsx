@@ -54,16 +54,16 @@ export default async function FacultyPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 md:py-24">
+      <section className="bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-6">
-              <Users className="w-8 h-8 text-blue-900" />
+              <Users className="w-8 h-8 text-purple-900" />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Our Faculty
             </h1>
-            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            <p className="text-xl text-purple-100 max-w-3xl mx-auto">
               Meet our world-class educators and researchers who are dedicated to advancing knowledge and inspiring the next generation of leaders.
             </p>
           </div>

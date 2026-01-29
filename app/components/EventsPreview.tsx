@@ -28,7 +28,7 @@ export default function EventsPreview() {
 
   if (loading) {
     return (
-      <section className="py-16 md:py-20 bg-blue-900 text-white">
+      <section className="py-16 md:py-20 bg-purple-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Upcoming Events</h2>
@@ -52,12 +52,12 @@ export default function EventsPreview() {
   }
 
   return (
-    <section className="py-16 md:py-20 bg-blue-900 text-white">
+    <section className="py-16 md:py-20 bg-purple-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Upcoming Events</h2>
-            <p className="text-lg text-blue-200 max-w-2xl">
+            <p className="text-lg text-purple-200 max-w-2xl">
               Join us for lectures, workshops, and campus activities.
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function EventsPreview() {
               >
                 <div className="flex gap-4">
                   {dateInfo && (
-                    <div className="flex-shrink-0 text-center bg-amber-500 text-blue-900 rounded-lg p-3 w-16">
+                    <div className="flex-shrink-0 text-center bg-amber-500 text-purple-900 rounded-lg p-3 w-16">
                       <div className="text-xs font-semibold uppercase">{dateInfo.month}</div>
                       <div className="text-2xl font-bold">{dateInfo.day}</div>
                     </div>
@@ -98,7 +98,7 @@ export default function EventsPreview() {
                     <h3 className="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors line-clamp-2">
                       {event.title}
                     </h3>
-                    <div className="flex flex-wrap gap-3 text-sm text-blue-200">
+                    <div className="flex flex-wrap gap-3 text-sm text-purple-200">
                       {dateInfo && (
                         <span className="flex items-center gap-1">
                           <Calendar className="w-4 h-4" />
@@ -122,7 +122,7 @@ export default function EventsPreview() {
         <div className="text-center mt-10">
           <Link
             href="/events"
-            className="inline-flex items-center px-8 py-4 bg-amber-500 text-blue-900 rounded-lg hover:bg-amber-400 transition-colors font-bold"
+            className="inline-flex items-center px-8 py-4 bg-amber-500 text-purple-900 rounded-lg hover:bg-amber-400 transition-colors font-bold"
           >
             View All Events
             <ArrowRight className="w-5 h-5 ml-2" />

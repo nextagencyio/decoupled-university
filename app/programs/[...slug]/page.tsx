@@ -68,11 +68,11 @@ export default async function ProgramPage({ params }: PageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+      <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Link
             href="/programs"
-            className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center text-purple-200 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Programs
@@ -81,7 +81,7 @@ export default async function ProgramPage({ params }: PageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               {program.degreeType && (
-                <span className="inline-block bg-amber-500 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+                <span className="inline-block bg-amber-500 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
                   {program.degreeType}
                 </span>
               )}
@@ -89,13 +89,13 @@ export default async function ProgramPage({ params }: PageProps) {
                 {program.title}
               </h1>
               {program.department && program.department.length > 0 && (
-                <div className="flex items-center text-blue-200 mb-6">
+                <div className="flex items-center text-purple-200 mb-6">
                   <Building className="w-5 h-5 mr-2" />
                   {program.department[0].name}
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-6 text-blue-100">
+              <div className="flex flex-wrap gap-6 text-purple-100">
                 {program.duration && (
                   <div className="flex items-center gap-2">
                     <Clock className="w-5 h-5" />
@@ -151,8 +151,8 @@ export default async function ProgramPage({ params }: PageProps) {
                     {program.highlights.map((highlight) => (
                       <div key={highlight.id} className="flex gap-4">
                         <div className="flex-shrink-0">
-                          <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                            <CheckCircle className="w-5 h-5 text-blue-600" />
+                          <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                            <CheckCircle className="w-5 h-5 text-purple-700" />
                           </div>
                         </div>
                         <div>
@@ -205,13 +205,13 @@ export default async function ProgramPage({ params }: PageProps) {
                 <div className="mt-8 space-y-3">
                   <a
                     href="/apply"
-                    className="block w-full text-center px-6 py-3 bg-amber-500 text-blue-900 rounded-lg font-bold hover:bg-amber-400 transition-colors"
+                    className="block w-full text-center px-6 py-3 bg-amber-500 text-purple-900 rounded-lg font-bold hover:bg-amber-400 transition-colors"
                   >
                     Apply Now
                   </a>
                   <a
                     href="/contact"
-                    className="block w-full text-center px-6 py-3 border-2 border-blue-900 text-blue-900 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                    className="block w-full text-center px-6 py-3 border-2 border-purple-900 text-purple-900 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
                   >
                     Request Info
                   </a>

@@ -31,12 +31,12 @@ export default function FacultyCard({ faculty }: FacultyCardProps) {
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-purple-700 transition-colors">
           {faculty.title}
         </h3>
 
         {faculty.position && (
-          <p className="text-blue-600 font-medium mb-2">{faculty.position}</p>
+          <p className="text-purple-700 font-medium mb-2">{faculty.position}</p>
         )}
 
         {faculty.department && faculty.department.length > 0 && (
@@ -64,7 +64,7 @@ export default function FacultyCard({ faculty }: FacultyCardProps) {
               {faculty.researchInterests.slice(0, 3).map((interest, index) => (
                 <span
                   key={index}
-                  className="inline-block bg-blue-50 text-blue-700 px-2 py-1 rounded text-xs font-medium"
+                  className="inline-block bg-purple-50 text-purple-700 px-2 py-1 rounded text-xs font-medium"
                 >
                   {interest}
                 </span>

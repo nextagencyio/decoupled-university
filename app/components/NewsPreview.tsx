@@ -64,7 +64,7 @@ export default function NewsPreview() {
           </div>
           <Link
             href="/news"
-            className="hidden md:flex items-center text-blue-600 hover:text-blue-700 font-medium"
+            className="hidden md:flex items-center text-purple-700 hover:text-purple-700 font-medium"
           >
             All News
             <ArrowRight className="w-4 h-4 ml-1" />
@@ -92,14 +92,14 @@ export default function NewsPreview() {
                         targetWidth={800}
                       />
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-indigo-700 flex items-center justify-center">
                         <Newspaper className="w-24 h-24 text-white/30" />
                       </div>
                     )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                       {item.category && item.category.length > 0 && (
-                        <span className="inline-block bg-amber-500 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold mb-3">
+                        <span className="inline-block bg-amber-500 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold mb-3">
                           {item.category[0].name}
                         </span>
                       )}
@@ -136,11 +136,11 @@ export default function NewsPreview() {
                     </div>
                     <div className="p-5">
                       {item.category && item.category.length > 0 && (
-                        <span className="text-blue-600 text-sm font-medium">
+                        <span className="text-purple-700 text-sm font-medium">
                           {item.category[0].name}
                         </span>
                       )}
-                      <h3 className="text-lg font-bold text-gray-900 mt-2 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <h3 className="text-lg font-bold text-gray-900 mt-2 mb-2 group-hover:text-purple-700 transition-colors line-clamp-2">
                         {item.title}
                       </h3>
                       <div className="flex items-center text-gray-500 text-sm">
@@ -158,7 +158,7 @@ export default function NewsPreview() {
         <div className="text-center mt-10 md:hidden">
           <Link
             href="/news"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+            className="inline-flex items-center text-purple-700 hover:text-purple-700 font-medium"
           >
             View All News
             <ArrowRight className="w-4 h-4 ml-1" />

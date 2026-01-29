@@ -31,10 +31,10 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
       >
         {/* Date Badge */}
         {dateInfo && (
-          <div className="flex-shrink-0 w-24 bg-blue-900 text-white flex flex-col items-center justify-center p-4">
+          <div className="flex-shrink-0 w-24 bg-purple-900 text-white flex flex-col items-center justify-center p-4">
             <span className="text-sm font-medium uppercase">{dateInfo.month}</span>
             <span className="text-3xl font-bold">{dateInfo.day}</span>
-            <span className="text-xs text-blue-200">{dateInfo.weekday}</span>
+            <span className="text-xs text-purple-200">{dateInfo.weekday}</span>
           </div>
         )}
 
@@ -45,7 +45,7 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
               {event.eventType[0].name}
             </span>
           )}
-          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition-colors">
             {event.title}
           </h3>
           <div className="flex flex-wrap gap-4 text-sm text-gray-500">
@@ -74,7 +74,7 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
       className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
     >
       {/* Image or Date Banner */}
-      <div className="relative h-48 bg-gradient-to-br from-blue-600 to-indigo-700">
+      <div className="relative h-48 bg-gradient-to-br from-purple-600 to-indigo-700">
         {event.image?.url ? (
           <ResponsiveImage
             src={event.image.url}
@@ -89,7 +89,7 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
             <div className="text-center text-white">
               <div className="text-sm font-medium uppercase tracking-wider">{dateInfo.month}</div>
               <div className="text-6xl font-bold">{dateInfo.day}</div>
-              <div className="text-sm text-blue-200">{dateInfo.weekday}</div>
+              <div className="text-sm text-purple-200">{dateInfo.weekday}</div>
             </div>
           </div>
         ) : (
@@ -100,14 +100,14 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
 
         {/* Event Type Badge */}
         {event.eventType && event.eventType.length > 0 && (
-          <div className="absolute top-4 left-4 bg-amber-500 text-blue-900 px-3 py-1 rounded-full text-sm font-semibold">
+          <div className="absolute top-4 left-4 bg-amber-500 text-purple-900 px-3 py-1 rounded-full text-sm font-semibold">
             {event.eventType[0].name}
           </div>
         )}
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors line-clamp-2">
+        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors line-clamp-2">
           {event.title}
         </h3>
 
@@ -146,7 +146,7 @@ export default function EventCard({ event, variant = 'default' }: EventCardProps
 
         {event.registrationUrl && (
           <div className="mt-4 pt-4 border-t border-gray-100">
-            <span className="inline-flex items-center text-blue-600 font-medium text-sm">
+            <span className="inline-flex items-center text-purple-700 font-medium text-sm">
               Register Now
               <ExternalLink className="w-4 h-4 ml-1" />
             </span>

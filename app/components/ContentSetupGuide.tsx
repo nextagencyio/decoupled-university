@@ -132,7 +132,7 @@ export default function ContentSetupGuide({ drupalBaseUrl }: ContentSetupGuidePr
                 <h3 className="font-semibold text-gray-900 mb-3">Steps:</h3>
                 <ol className="space-y-3 text-sm text-gray-700">
                   <li className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">1</span>
+                    <span className="bg-purple-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">1</span>
                     <div>
                       <span>Open </span>
                       <code className="bg-gray-200 px-1 rounded">data/starter-content.json</code>
@@ -140,14 +140,14 @@ export default function ContentSetupGuide({ drupalBaseUrl }: ContentSetupGuidePr
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">2</span>
+                    <span className="bg-purple-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">2</span>
                     <div>
                       <span>Go to your Drupal admin: </span>
                       <a
                         href={adminImportUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-600 hover:underline inline-flex items-center gap-1"
+                        className="text-purple-700 hover:underline inline-flex items-center gap-1"
                       >
                         {adminImportUrl.replace('https://', '')}
                         <ExternalLink className="w-3 h-3" />
@@ -155,15 +155,15 @@ export default function ContentSetupGuide({ drupalBaseUrl }: ContentSetupGuidePr
                     </div>
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">3</span>
+                    <span className="bg-purple-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">3</span>
                     Paste the JSON into the import form
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">4</span>
+                    <span className="bg-purple-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">4</span>
                     Click &quot;Preview&quot; to verify, then &quot;Import&quot; to apply
                   </li>
                   <li className="flex items-start">
-                    <span className="bg-blue-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">5</span>
+                    <span className="bg-purple-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs mr-3 mt-0.5">5</span>
                     Refresh this page
                   </li>
                 </ol>
@@ -174,7 +174,7 @@ export default function ContentSetupGuide({ drupalBaseUrl }: ContentSetupGuidePr
                   href={adminImportUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-lg font-medium text-center hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 bg-purple-700 text-white px-4 py-3 rounded-lg font-medium text-center hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
                 >
                   Open Drupal Import Page
                   <ExternalLink className="w-4 h-4" />

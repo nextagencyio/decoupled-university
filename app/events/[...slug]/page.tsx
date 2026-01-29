@@ -81,7 +81,7 @@ export default async function EventPage({ params }: PageProps) {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white">
+      <section className="relative bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white">
         {event.image?.url && (
           <div className="absolute inset-0 opacity-30">
             <ResponsiveImage
@@ -97,7 +97,7 @@ export default async function EventPage({ params }: PageProps) {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <Link
             href="/events"
-            className="inline-flex items-center text-blue-200 hover:text-white mb-6 transition-colors"
+            className="inline-flex items-center text-purple-200 hover:text-white mb-6 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Events
@@ -105,7 +105,7 @@ export default async function EventPage({ params }: PageProps) {
 
           <div className="max-w-3xl">
             {event.eventType && event.eventType.length > 0 && (
-              <span className="inline-block bg-amber-500 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
+              <span className="inline-block bg-amber-500 text-purple-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
                 {event.eventType[0].name}
               </span>
             )}
@@ -126,9 +126,9 @@ export default async function EventPage({ params }: PageProps) {
                   <Calendar className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold">{startDate.weekday}</div>
-                    <div className="text-blue-200">{startDate.date}</div>
+                    <div className="text-purple-200">{startDate.date}</div>
                     {endDate && startDate.date !== endDate.date && (
-                      <div className="text-blue-200">to {endDate.date}</div>
+                      <div className="text-purple-200">to {endDate.date}</div>
                     )}
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default async function EventPage({ params }: PageProps) {
                   <Clock className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
                   <div>
                     <div className="font-semibold">Time</div>
-                    <div className="text-blue-200">
+                    <div className="text-purple-200">
                       {startDate.time}
                       {endDate && ` - ${endDate.time}`}
                     </div>
@@ -148,7 +148,7 @@ export default async function EventPage({ params }: PageProps) {
             </div>
 
             {event.location && (
-              <div className="flex items-center gap-3 text-blue-100">
+              <div className="flex items-center gap-3 text-purple-100">
                 <MapPin className="w-5 h-5 text-amber-400" />
                 <span>{event.location}</span>
               </div>
@@ -227,7 +227,7 @@ export default async function EventPage({ params }: PageProps) {
                     href={event.registrationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-full px-6 py-3 bg-amber-500 text-blue-900 rounded-lg font-bold hover:bg-amber-400 transition-colors"
+                    className="flex items-center justify-center w-full px-6 py-3 bg-amber-500 text-purple-900 rounded-lg font-bold hover:bg-amber-400 transition-colors"
                   >
                     Register Now
                     <ExternalLink className="w-4 h-4 ml-2" />
@@ -243,7 +243,7 @@ export default async function EventPage({ params }: PageProps) {
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <Link
                     href="/events"
-                    className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center"
+                    className="text-purple-700 hover:text-purple-700 font-medium text-sm flex items-center"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1" />
                     View all events
