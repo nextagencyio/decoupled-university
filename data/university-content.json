@@ -1,0 +1,632 @@
+{
+  "model": [
+    {
+      "bundle": "homepage",
+      "label": "Homepage",
+      "description": "University homepage with hero, featured programs, news, and events",
+      "fields": [
+        {
+          "id": "hero_title",
+          "label": "Hero Title",
+          "type": "string",
+          "description": "Main headline (e.g., 'Shape Your Future')"
+        },
+        {
+          "id": "hero_subtitle",
+          "label": "Hero Subtitle",
+          "type": "string",
+          "description": "Secondary text below the title"
+        },
+        {
+          "id": "hero_description",
+          "label": "Hero Description",
+          "type": "text",
+          "description": "Longer description for the hero section"
+        },
+        {
+          "id": "stats_items",
+          "label": "Statistics",
+          "type": "paragraph(stat_item)[]",
+          "description": "Key university statistics (students, faculty, programs, etc.)"
+        },
+        {
+          "id": "featured_programs_title",
+          "label": "Featured Programs Title",
+          "type": "string"
+        },
+        {
+          "id": "cta_title",
+          "label": "CTA Section Title",
+          "type": "string"
+        },
+        {
+          "id": "cta_description",
+          "label": "CTA Description",
+          "type": "text"
+        },
+        {
+          "id": "cta_primary",
+          "label": "Primary CTA Text",
+          "type": "string"
+        },
+        {
+          "id": "cta_secondary",
+          "label": "Secondary CTA Text",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "bundle": "program",
+      "label": "Academic Program",
+      "description": "Degree programs offered by the university",
+      "body": true,
+      "fields": [
+        {
+          "id": "degree_type",
+          "label": "Degree Type",
+          "type": "string",
+          "description": "Bachelor's, Master's, Doctorate, Certificate"
+        },
+        {
+          "id": "department",
+          "label": "Department",
+          "type": "term(departments)[]",
+          "description": "Academic department offering this program"
+        },
+        {
+          "id": "duration",
+          "label": "Duration",
+          "type": "string",
+          "description": "Program length (e.g., '4 years')"
+        },
+        {
+          "id": "credits",
+          "label": "Credits Required",
+          "type": "integer",
+          "description": "Total credit hours required"
+        },
+        {
+          "id": "image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "id": "highlights",
+          "label": "Program Highlights",
+          "type": "paragraph(highlight_item)[]"
+        }
+      ]
+    },
+    {
+      "bundle": "faculty",
+      "label": "Faculty Member",
+      "description": "Professors, instructors, and academic staff",
+      "body": true,
+      "fields": [
+        {
+          "id": "position",
+          "label": "Position/Title",
+          "type": "string",
+          "description": "Professor, Associate Professor, Lecturer, etc."
+        },
+        {
+          "id": "department",
+          "label": "Department",
+          "type": "term(departments)[]"
+        },
+        {
+          "id": "email",
+          "label": "Email",
+          "type": "string"
+        },
+        {
+          "id": "phone",
+          "label": "Phone",
+          "type": "string"
+        },
+        {
+          "id": "office",
+          "label": "Office Location",
+          "type": "string"
+        },
+        {
+          "id": "photo",
+          "label": "Photo",
+          "type": "image"
+        },
+        {
+          "id": "research_interests",
+          "label": "Research Interests",
+          "type": "string[]"
+        },
+        {
+          "id": "education",
+          "label": "Education",
+          "type": "text",
+          "description": "Academic credentials and degrees"
+        }
+      ]
+    },
+    {
+      "bundle": "event",
+      "label": "Campus Event",
+      "description": "Lectures, seminars, campus activities, and special events",
+      "body": true,
+      "fields": [
+        {
+          "id": "event_date",
+          "label": "Event Date",
+          "type": "datetime"
+        },
+        {
+          "id": "end_date",
+          "label": "End Date",
+          "type": "datetime"
+        },
+        {
+          "id": "location",
+          "label": "Location",
+          "type": "string"
+        },
+        {
+          "id": "event_type",
+          "label": "Event Type",
+          "type": "term(event_types)[]"
+        },
+        {
+          "id": "registration_url",
+          "label": "Registration URL",
+          "type": "string"
+        },
+        {
+          "id": "image",
+          "label": "Event Image",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "bundle": "news",
+      "label": "News Article",
+      "description": "University news, announcements, and press releases",
+      "body": true,
+      "fields": [
+        {
+          "id": "image",
+          "label": "Featured Image",
+          "type": "image"
+        },
+        {
+          "id": "category",
+          "label": "Category",
+          "type": "term(news_categories)[]"
+        },
+        {
+          "id": "featured",
+          "label": "Featured",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "bundle": "page",
+      "label": "Basic Page",
+      "description": "Static content pages for about, admissions, contact, etc.",
+      "body": true,
+      "fields": []
+    },
+    {
+      "entity": "paragraph",
+      "bundle": "stat_item",
+      "label": "Statistic Item",
+      "description": "A key statistic with number and label",
+      "fields": [
+        {
+          "id": "number",
+          "label": "Number",
+          "type": "string!",
+          "description": "The statistic value (e.g., '15,000+', '98%')"
+        },
+        {
+          "id": "label",
+          "label": "Label",
+          "type": "string!",
+          "description": "What the number represents"
+        }
+      ]
+    },
+    {
+      "entity": "paragraph",
+      "bundle": "highlight_item",
+      "label": "Highlight Item",
+      "description": "Program highlight or feature",
+      "fields": [
+        {
+          "id": "icon",
+          "label": "Icon",
+          "type": "string"
+        },
+        {
+          "id": "title",
+          "label": "Title",
+          "type": "string!"
+        },
+        {
+          "id": "description",
+          "label": "Description",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "content": [
+    {
+      "id": "stat-students",
+      "type": "paragraph.stat_item",
+      "values": {
+        "number": "15,000+",
+        "label": "Students"
+      }
+    },
+    {
+      "id": "stat-faculty",
+      "type": "paragraph.stat_item",
+      "values": {
+        "number": "800+",
+        "label": "Faculty Members"
+      }
+    },
+    {
+      "id": "stat-programs",
+      "type": "paragraph.stat_item",
+      "values": {
+        "number": "120+",
+        "label": "Degree Programs"
+      }
+    },
+    {
+      "id": "stat-employment",
+      "type": "paragraph.stat_item",
+      "values": {
+        "number": "94%",
+        "label": "Graduate Employment Rate"
+      }
+    },
+    {
+      "id": "highlight-research",
+      "type": "paragraph.highlight_item",
+      "values": {
+        "icon": "flask",
+        "title": "Research Opportunities",
+        "description": "Work alongside world-renowned faculty on cutting-edge research projects."
+      }
+    },
+    {
+      "id": "highlight-career",
+      "type": "paragraph.highlight_item",
+      "values": {
+        "icon": "briefcase",
+        "title": "Career Services",
+        "description": "Dedicated career counselors and industry connections help you land your dream job."
+      }
+    },
+    {
+      "id": "highlight-global",
+      "type": "paragraph.highlight_item",
+      "values": {
+        "icon": "globe",
+        "title": "Global Network",
+        "description": "Study abroad programs and partnerships with universities worldwide."
+      }
+    },
+    {
+      "id": "homepage",
+      "type": "node.homepage",
+      "path": "/homepage",
+      "values": {
+        "title": "Welcome to State University",
+        "hero_title": "Shape Your Future",
+        "hero_subtitle": "Where Excellence Meets Opportunity",
+        "hero_description": "<p>Join a community of scholars, innovators, and leaders. Our world-class faculty and cutting-edge facilities prepare you for success in an ever-changing world.</p>",
+        "stats_items": [
+          "@stat-students",
+          "@stat-faculty",
+          "@stat-programs",
+          "@stat-employment"
+        ],
+        "featured_programs_title": "Explore Our Programs",
+        "cta_title": "Ready to Begin Your Journey?",
+        "cta_description": "<p>Applications for Fall 2026 are now open. Take the first step toward your future today.</p>",
+        "cta_primary": "Apply Now",
+        "cta_secondary": "Request Information"
+      }
+    },
+    {
+      "id": "program-cs",
+      "type": "node.program",
+      "path": "/programs/computer-science",
+      "values": {
+        "title": "Computer Science",
+        "body": "<p>Our Computer Science program prepares students for careers in software development, artificial intelligence, cybersecurity, and more. With state-of-the-art labs and industry partnerships, you'll gain hands-on experience with the latest technologies.</p><h2>What You'll Learn</h2><ul><li>Programming fundamentals and advanced algorithms</li><li>Machine learning and artificial intelligence</li><li>Software engineering best practices</li><li>Database design and cloud computing</li></ul>",
+        "degree_type": "Bachelor of Science",
+        "department": [
+          "engineering"
+        ],
+        "duration": "4 years",
+        "credits": 120,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+          "alt": "Computer Science"
+        },
+        "highlights": [
+          "@highlight-research",
+          "@highlight-career",
+          "@highlight-global"
+        ]
+      }
+    },
+    {
+      "id": "program-psychology",
+      "type": "node.program",
+      "path": "/programs/psychology",
+      "values": {
+        "title": "Psychology",
+        "body": "<p>Explore the science of mind and behavior in our comprehensive Psychology program. Students gain a strong foundation in research methods, cognitive processes, and human development while preparing for careers in mental health, research, or graduate study.</p><h2>Areas of Focus</h2><ul><li>Clinical Psychology</li><li>Cognitive Neuroscience</li><li>Developmental Psychology</li><li>Social Psychology</li></ul>",
+        "degree_type": "Bachelor of Arts",
+        "department": [
+          "arts-sciences"
+        ],
+        "duration": "4 years",
+        "credits": 120,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=800&q=80",
+          "alt": "Psychology"
+        },
+        "highlights": [
+          "@highlight-research",
+          "@highlight-career"
+        ]
+      }
+    },
+    {
+      "id": "program-mechanical-engineering",
+      "type": "node.program",
+      "path": "/programs/mechanical-engineering",
+      "values": {
+        "title": "Mechanical Engineering",
+        "body": "<p>Design, build, and innovate with our ABET-accredited Mechanical Engineering program. From robotics to renewable energy, students learn to solve complex engineering challenges using cutting-edge tools and technologies.</p><h2>Specializations</h2><ul><li>Robotics and Automation</li><li>Thermal Systems</li><li>Manufacturing</li><li>Aerospace Applications</li></ul>",
+        "degree_type": "Bachelor of Science",
+        "department": [
+          "engineering"
+        ],
+        "duration": "4 years",
+        "credits": 128,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80",
+          "alt": "Mechanical Engineering"
+        },
+        "highlights": [
+          "@highlight-research",
+          "@highlight-career",
+          "@highlight-global"
+        ]
+      }
+    },
+    {
+      "id": "program-english-literature",
+      "type": "node.program",
+      "path": "/programs/english-literature",
+      "values": {
+        "title": "English Literature",
+        "body": "<p>Immerse yourself in the world of literature, from classical texts to contemporary works. Our English Literature program develops critical thinking, analytical writing, and communication skills valued across industries.</p><h2>Areas of Study</h2><ul><li>British Literature</li><li>American Literature</li><li>Creative Writing</li><li>Literary Theory</li></ul>",
+        "degree_type": "Bachelor of Arts",
+        "department": [
+          "arts-sciences"
+        ],
+        "duration": "4 years",
+        "credits": 120,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
+          "alt": "English Literature"
+        },
+        "highlights": [
+          "@highlight-global",
+          "@highlight-career"
+        ]
+      }
+    },
+    {
+      "id": "program-finance",
+      "type": "node.program",
+      "path": "/programs/finance",
+      "values": {
+        "title": "Finance",
+        "body": "<p>Build expertise in financial markets, investment analysis, and corporate finance. Our Finance program prepares students for careers in banking, investment management, and financial consulting.</p><h2>Key Topics</h2><ul><li>Investment Analysis</li><li>Corporate Finance</li><li>Financial Modeling</li><li>Risk Management</li></ul>",
+        "degree_type": "Bachelor of Science",
+        "department": [
+          "business"
+        ],
+        "duration": "4 years",
+        "credits": 120,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+          "alt": "Finance"
+        },
+        "highlights": [
+          "@highlight-career",
+          "@highlight-global"
+        ]
+      }
+    },
+    {
+      "id": "program-biology",
+      "type": "node.program",
+      "path": "/programs/biology",
+      "values": {
+        "title": "Biology",
+        "body": "<p>Discover the science of life in our comprehensive Biology program. From molecular biology to ecology, students gain hands-on laboratory experience and prepare for careers in healthcare, research, or environmental science.</p><h2>Tracks</h2><ul><li>Pre-Medical</li><li>Molecular Biology</li><li>Ecology and Evolution</li><li>Biotechnology</li></ul>",
+        "degree_type": "Bachelor of Science",
+        "department": [
+          "arts-sciences"
+        ],
+        "duration": "4 years",
+        "credits": 120,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
+          "alt": "Biology"
+        },
+        "highlights": [
+          "@highlight-research",
+          "@highlight-career"
+        ]
+      }
+    },
+    {
+      "id": "faculty-smith",
+      "type": "node.faculty",
+      "path": "/faculty/dr-sarah-smith",
+      "values": {
+        "title": "Dr. Sarah Smith",
+        "body": "<p>Dr. Smith is a leading researcher in artificial intelligence and machine learning. Her work on neural networks has been published in top-tier journals and has applications in healthcare, finance, and autonomous systems.</p>",
+        "position": "Professor of Computer Science",
+        "department": [
+          "engineering"
+        ],
+        "email": "ssmith@stateuniversity.edu",
+        "phone": "(555) 123-4567",
+        "office": "Engineering Building, Room 302",
+        "photo": {
+          "uri": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+          "alt": "Dr. Sarah Smith - Faculty Photo"
+        },
+        "research_interests": [
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Neural Networks",
+          "Computer Vision"
+        ],
+        "education": "<p><strong>Ph.D. in Computer Science</strong>, MIT, 2008<br/><strong>M.S. in Computer Science</strong>, Stanford University, 2004<br/><strong>B.S. in Mathematics</strong>, UC Berkeley, 2002</p>"
+      }
+    },
+    {
+      "id": "faculty-johnson",
+      "type": "node.faculty",
+      "path": "/faculty/dr-michael-johnson",
+      "values": {
+        "title": "Dr. Michael Johnson",
+        "body": "<p>Dr. Johnson specializes in organizational behavior and leadership development. He has consulted for Fortune 500 companies and brings real-world business experience to the classroom.</p>",
+        "position": "Associate Professor of Management",
+        "department": [
+          "business"
+        ],
+        "email": "mjohnson@stateuniversity.edu",
+        "phone": "(555) 234-5678",
+        "office": "Business School, Room 415",
+        "photo": {
+          "uri": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+          "alt": "Dr. Michael Johnson - Faculty Photo"
+        },
+        "research_interests": [
+          "Leadership",
+          "Organizational Behavior",
+          "Team Dynamics",
+          "Corporate Culture"
+        ],
+        "education": "<p><strong>Ph.D. in Management</strong>, Harvard Business School, 2012<br/><strong>MBA</strong>, Wharton School, 2006<br/><strong>B.A. in Economics</strong>, Yale University, 2004</p>"
+      }
+    },
+    {
+      "id": "event-open-house",
+      "type": "node.event",
+      "path": "/events/spring-open-house",
+      "values": {
+        "title": "Spring Open House",
+        "body": "<p>Explore our beautiful campus, meet with faculty and current students, and learn about our academic programs. Campus tours depart every 30 minutes from the Welcome Center.</p><h2>Schedule</h2><ul><li>9:00 AM - Registration & Welcome</li><li>9:30 AM - Campus Tours Begin</li><li>11:00 AM - Academic Fair</li><li>12:00 PM - Lunch with Students</li><li>1:30 PM - Financial Aid Workshop</li><li>3:00 PM - Closing Remarks</li></ul>",
+        "event_date": "2026-04-15T09:00:00",
+        "end_date": "2026-04-15T15:00:00",
+        "location": "Student Union Building",
+        "event_type": [
+          "admissions"
+        ],
+        "registration_url": "https://stateuniversity.edu/register/open-house",
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
+          "alt": "Spring Open House"
+        }
+      }
+    },
+    {
+      "id": "event-commencement",
+      "type": "node.event",
+      "path": "/events/commencement-2026",
+      "values": {
+        "title": "Commencement Ceremony 2026",
+        "body": "<p>Join us as we celebrate the achievements of the Class of 2026. The ceremony will feature keynote speaker Dr. Maya Chen, Nobel laureate and distinguished alumna.</p><p>Tickets are required for guests. Each graduate receives 4 complimentary tickets.</p>",
+        "event_date": "2026-05-20T10:00:00",
+        "end_date": "2026-05-20T13:00:00",
+        "location": "University Stadium",
+        "event_type": [
+          "ceremony"
+        ],
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80",
+          "alt": "Commencement Ceremony 2026"
+        }
+      }
+    },
+    {
+      "id": "news-research-grant",
+      "type": "node.news",
+      "path": "/news/research-grant-announcement",
+      "values": {
+        "title": "University Receives $50M Research Grant",
+        "body": "<p>State University has been awarded a $50 million grant from the National Science Foundation to establish a new Center for Climate Research. The center will bring together scientists from multiple disciplines to study climate change impacts and develop innovative solutions.</p><p>\"This grant represents a tremendous opportunity to make a real difference in addressing one of the most pressing challenges of our time,\" said University President Dr. James Williams.</p><p>The center is expected to create 100 new research positions and provide funding for 50 graduate fellowships over the next five years.</p>",
+        "category": [
+          "research",
+          "announcements"
+        ],
+        "featured": true,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+          "alt": "University Receives $50M Research Grant"
+        }
+      }
+    },
+    {
+      "id": "news-ranking",
+      "type": "node.news",
+      "path": "/news/top-50-ranking",
+      "values": {
+        "title": "State University Ranked in Top 50 Nationally",
+        "body": "<p>U.S. News & World Report has ranked State University among the top 50 public universities in the nation, up five spots from last year. The ranking recognizes our commitment to academic excellence, research innovation, and student success.</p><p>Key factors contributing to the improved ranking include higher graduation rates, increased research funding, and strong alumni giving.</p>",
+        "category": [
+          "announcements"
+        ],
+        "featured": true,
+        "image": {
+          "uri": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+          "alt": "State University Ranked in Top 50 Nationally"
+        }
+      }
+    },
+    {
+      "id": "page-about",
+      "type": "node.page",
+      "path": "/about",
+      "values": {
+        "title": "About State University",
+        "body": "<p>Founded in 1892, State University has grown from a small agricultural college to a comprehensive research university serving over 15,000 students. Our mission is to advance knowledge, foster creativity, and prepare students to be engaged citizens and leaders in their communities.</p><h2>Our Values</h2><ul><li><strong>Excellence</strong> - We pursue the highest standards in teaching, research, and service.</li><li><strong>Integrity</strong> - We act with honesty and ethical responsibility.</li><li><strong>Diversity</strong> - We embrace diverse perspectives and create an inclusive community.</li><li><strong>Innovation</strong> - We encourage creative thinking and bold ideas.</li></ul><h2>Accreditation</h2><p>State University is accredited by the Higher Learning Commission and holds specialized accreditations in engineering, business, nursing, and education.</p>"
+      }
+    },
+    {
+      "id": "page-admissions",
+      "type": "node.page",
+      "path": "/admissions",
+      "values": {
+        "title": "Admissions",
+        "body": "<h2>Undergraduate Admissions</h2><p>We welcome applications from students who demonstrate academic achievement, intellectual curiosity, and a commitment to making a difference. Our holistic review process considers your academic record, standardized test scores (optional), extracurricular activities, and personal essays.</p><h2>Application Deadlines</h2><ul><li><strong>Early Decision:</strong> November 1</li><li><strong>Regular Decision:</strong> January 15</li><li><strong>Transfer Students:</strong> March 1</li></ul><h2>Graduate Admissions</h2><p>Graduate program requirements vary by department. Please visit the specific program page for application requirements and deadlines.</p>"
+      }
+    }
+  ]
+}
