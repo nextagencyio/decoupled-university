@@ -66,7 +66,9 @@ async function confirm(question: string, defaultYes = true): Promise<boolean> {
 
 function runCommand(command: string, args: string[], options: { silent?: boolean } = {}): Promise<{ success: boolean; output: string }> {
   return new Promise((resolve) => {
-    const child = spawn(command, args, {
+    // Join command and args to avoid DEP0190 deprecation warning
+    const fullCommand = [command, ...args].join(' ');
+    const child = spawn(fullCommand, [], {
       stdio: options.silent ? 'pipe' : 'inherit',
       shell: true,
     });
