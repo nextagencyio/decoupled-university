@@ -12,6 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "setup": "tsx scripts/setup.ts",
     "setup-content": "npx decoupled-cli@latest content import --file data/university-content.json",
     "setup-content:preview": "npx decoupled-cli@latest content import --file data/university-content.json --preview",
     "test": "npx decoupled-cli health check && echo '✅ CLI health check passed'",

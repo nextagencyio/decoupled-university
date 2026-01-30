@@ -1,0 +1,306 @@
+#!/usr/bin/env npx tsx
+/**
+ * Interactive setup script for Decoupled University
+ * Walks users through creating a space, configuring environment, and importing content
+ */
+
+import { execSync, spawn } from 'child_process';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as readline from 'readline';
+
+const COLORS = {
+  reset: '\x1b[0m',
+  bright: '\x1b[1m',
+  dim: '\x1b[2m',
+  red: '\x1b[31m',
+  green: '\x1b[32m',
+  yellow: '\x1b[33m',
+  blue: '\x1b[34m',
+  cyan: '\x1b[36m',
+};
+
+function log(message: string, color: keyof typeof COLORS = 'reset') {
+  console.log(`${COLORS[color]}${message}${COLORS.reset}`);
+}
+
+function logStep(step: number, total: number, message: string) {
+  console.log(`\n${COLORS.cyan}[${step}/${total}]${COLORS.reset} ${COLORS.bright}${message}${COLORS.reset}`);
+}
+
+function logSuccess(message: string) {
+  console.log(`${COLORS.green}✓${COLORS.reset} ${message}`);
+}
+
+function logError(message: string) {
+  console.log(`${COLORS.red}✗${COLORS.reset} ${message}`);
+}
+
+function logInfo(message: string) {
+  console.log(`${COLORS.dim}${message}${COLORS.reset}`);
+}
+
+async function prompt(question: string, defaultValue?: string): Promise<string> {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  const defaultHint = defaultValue ? ` (${defaultValue})` : '';
+
+  return new Promise((resolve) => {
+    rl.question(`${question}${defaultHint}: `, (answer) => {
+      rl.close();
+      resolve(answer.trim() || defaultValue || '');
+    });
+  });
+}
+
+async function confirm(question: string, defaultYes = true): Promise<boolean> {
+  const hint = defaultYes ? '[Y/n]' : '[y/N]';
+  const answer = await prompt(`${question} ${hint}`);
+
+  if (!answer) return defaultYes;
+  return answer.toLowerCase().startsWith('y');
+}
+
+function runCommand(command: string, args: string[], options: { silent?: boolean } = {}): Promise<{ success: boolean; output: string }> {
+  return new Promise((resolve) => {
+    const child = spawn(command, args, {
+      stdio: options.silent ? 'pipe' : 'inherit',
+      shell: true,
+    });
+
+    let output = '';
+
+    if (options.silent) {
+      child.stdout?.on('data', (data) => {
+        output += data.toString();
+      });
+      child.stderr?.on('data', (data) => {
+        output += data.toString();
+      });
+    }
+
+    child.on('close', (code) => {
+      resolve({ success: code === 0, output });
+    });
+  });
+}
+
+function runCommandSync(command: string): { success: boolean; output: string } {
+  try {
+    const output = execSync(command, { encoding: 'utf8', stdio: 'pipe' });
+    return { success: true, output };
+  } catch (error: any) {
+    return { success: false, output: error.message };
+  }
+}
+
+async function checkAuth(): Promise<boolean> {
+  const result = runCommandSync('npx decoupled-cli@latest auth status 2>&1');
+  return result.success && !result.output.includes('not authenticated');
+}
+
+async function waitForSpace(spaceId: number, maxWaitSeconds = 120): Promise<boolean> {
+  const startTime = Date.now();
+  const spinnerChars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
+  let spinnerIdx = 0;
+
+  process.stdout.write('\n');
+
+  while ((Date.now() - startTime) / 1000 < maxWaitSeconds) {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const spinner = spinnerChars[spinnerIdx % spinnerChars.length];
+    process.stdout.write(`\r${COLORS.cyan}${spinner}${COLORS.reset} Waiting for space to be ready... (${elapsed}s)`);
+    spinnerIdx++;
+
+    const result = runCommandSync(`npx decoupled-cli@latest spaces show ${spaceId} --json 2>/dev/null`);
+
+    if (result.success) {
+      try {
+        const data = JSON.parse(result.output);
+        if (data.status === 'active' || data.drupalSiteStatus === 'active') {
+          process.stdout.write(`\r${COLORS.green}✓${COLORS.reset} Space is ready!                              \n`);
+          return true;
+        }
+      } catch {
+        // JSON parse failed, continue waiting
+      }
+    }
+
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+  }
+
+  process.stdout.write(`\r${COLORS.red}✗${COLORS.reset} Timeout waiting for space                    \n`);
+  return false;
+}
+
+async function main() {
+  console.log(`
+${COLORS.bright}╔════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   ${COLORS.cyan}Decoupled University${COLORS.reset}${COLORS.bright} - Interactive Setup                 ║
+║                                                              ║
+╚════════════════════════════════════════════════════════════╝${COLORS.reset}
+`);
+
+  const totalSteps = 5;
+  let currentStep = 1;
+
+  // Step 1: Check/Setup Authentication
+  logStep(currentStep++, totalSteps, 'Checking authentication');
+
+  const isAuthenticated = await checkAuth();
+
+  if (!isAuthenticated) {
+    log('You need to authenticate with Decoupled.io first.', 'yellow');
+    const shouldAuth = await confirm('Open browser to authenticate?');
+
+    if (shouldAuth) {
+      log('\nOpening browser for authentication...', 'dim');
+      await runCommand('npx', ['decoupled-cli@latest', 'auth', 'login']);
+
+      // Verify auth worked
+      if (!(await checkAuth())) {
+        logError('Authentication failed. Please try again.');
+        process.exit(1);
+      }
+    } else {
+      logError('Authentication required to continue.');
+      process.exit(1);
+    }
+  }
+
+  logSuccess('Authenticated with Decoupled.io');
+
+  // Step 2: Create Space
+  logStep(currentStep++, totalSteps, 'Creating Drupal space');
+
+  const spaceName = await prompt('Enter a name for your university site', 'My University');
+
+  log(`\nCreating space "${spaceName}"...`, 'dim');
+
+  const createResult = runCommandSync(`npx decoupled-cli@latest spaces create "${spaceName}" --json 2>&1`);
+
+  let spaceId: number | null = null;
+  let spaceUrl: string | null = null;
+
+  if (createResult.success) {
+    try {
+      // Try to parse JSON from output
+      const jsonMatch = createResult.output.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const data = JSON.parse(jsonMatch[0]);
+        spaceId = data.id || data.space?.id;
+        spaceUrl = data.drupalSiteUrl || data.space?.drupalSiteUrl;
+      }
+    } catch {
+      // Try to extract space ID from text output
+      const idMatch = createResult.output.match(/Space ID:\s*(\d+)/i) ||
+                      createResult.output.match(/id[:\s]+(\d+)/i);
+      if (idMatch) {
+        spaceId = parseInt(idMatch[1], 10);
+      }
+    }
+  }
+
+  if (!spaceId) {
+    logError('Failed to create space. Output:');
+    console.log(createResult.output);
+
+    const manualId = await prompt('Enter space ID manually (or press Enter to exit)');
+    if (manualId && !isNaN(parseInt(manualId, 10))) {
+      spaceId = parseInt(manualId, 10);
+    } else {
+      process.exit(1);
+    }
+  }
+
+  logSuccess(`Space created with ID: ${spaceId}`);
+  if (spaceUrl) {
+    logInfo(`URL: ${spaceUrl}`);
+  }
+
+  // Step 3: Wait for space to be ready
+  logStep(currentStep++, totalSteps, 'Waiting for space provisioning');
+
+  logInfo('New spaces take ~90 seconds to provision...');
+
+  const isReady = await waitForSpace(spaceId);
+
+  if (!isReady) {
+    logError('Space provisioning timed out.');
+    log('You can check status later with: npx decoupled-cli@latest spaces show ' + spaceId, 'yellow');
+
+    const shouldContinue = await confirm('Continue anyway?', false);
+    if (!shouldContinue) {
+      process.exit(1);
+    }
+  }
+
+  // Step 4: Configure environment
+  logStep(currentStep++, totalSteps, 'Configuring environment');
+
+  const envPath = path.join(process.cwd(), '.env.local');
+  const envExists = fs.existsSync(envPath);
+
+  if (envExists) {
+    const shouldOverwrite = await confirm('.env.local already exists. Overwrite?', false);
+    if (!shouldOverwrite) {
+      logInfo('Skipping environment configuration');
+    } else {
+      await runCommand('npx', ['decoupled-cli@latest', 'spaces', 'env', String(spaceId), '--write', '.env.local']);
+      logSuccess('Environment configured in .env.local');
+    }
+  } else {
+    await runCommand('npx', ['decoupled-cli@latest', 'spaces', 'env', String(spaceId), '--write', '.env.local']);
+    logSuccess('Environment configured in .env.local');
+  }
+
+  // Step 5: Import content
+  logStep(currentStep++, totalSteps, 'Importing content');
+
+  const shouldImport = await confirm('Import university sample content?');
+
+  if (shouldImport) {
+    log('\nImporting content types and sample data...', 'dim');
+    const importResult = await runCommand('npx', ['decoupled-cli@latest', 'content', 'import', '--file', 'data/university-content.json']);
+
+    if (importResult.success) {
+      logSuccess('Content imported successfully');
+    } else {
+      logError('Content import had issues. You can retry with:');
+      log('  npx decoupled-cli@latest content import --file data/university-content.json', 'yellow');
+    }
+  } else {
+    logInfo('Skipping content import');
+  }
+
+  // Done!
+  console.log(`
+${COLORS.green}╔════════════════════════════════════════════════════════════╗
+║                                                              ║
+║   ${COLORS.bright}Setup Complete!${COLORS.reset}${COLORS.green}                                          ║
+║                                                              ║
+╚════════════════════════════════════════════════════════════╝${COLORS.reset}
+
+${COLORS.bright}Next steps:${COLORS.reset}
+
+  1. Start the development server:
+     ${COLORS.cyan}npm run dev${COLORS.reset}
+
+  2. Open ${COLORS.cyan}http://localhost:3000${COLORS.reset} in your browser
+
+  3. Access Drupal admin:
+     ${COLORS.cyan}npx decoupled-cli@latest spaces login ${spaceId}${COLORS.reset}
+
+${COLORS.dim}Space ID: ${spaceId}${COLORS.reset}
+${spaceUrl ? `${COLORS.dim}Drupal URL: ${spaceUrl}${COLORS.reset}` : ''}
+`);
+}
+
+main().catch((error) => {
+  logError(`Setup failed: ${error.message}`);
+  process.exit(1);
+});

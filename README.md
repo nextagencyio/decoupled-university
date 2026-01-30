@@ -22,53 +22,71 @@ cd my-university
 npm install
 ```
 
-### 2. Authenticate with Decoupled.io
+### 2. Run interactive setup
 
 ```bash
-npx decoupled-cli auth login
+npm run setup
 ```
 
-This opens a browser to authenticate with your Decoupled.io account.
+This interactive script will:
+- Authenticate with Decoupled.io (opens browser)
+- Create a new Drupal space
+- Wait for provisioning (~90 seconds)
+- Configure your `.env.local` file
+- Import sample content
 
-### 3. Create a Drupal space
-
-```bash
-npx decoupled-cli spaces create "My University"
-```
-
-Note the space ID returned (e.g., `Space ID: 1234`). Wait ~90 seconds for provisioning.
-
-### 4. Configure environment
-
-Fetch OAuth credentials and save to `.env.local`:
-
-```bash
-npx decoupled-cli spaces env 1234 --write .env.local
-```
-
-Or manually copy from [dashboard.decoupled.io](https://dashboard.decoupled.io).
-
-### 5. Import content
-
-```bash
-npm run setup-content
-```
-
-This imports the university content types and sample content:
-- Homepage with statistics and CTAs
-- 6 Academic Programs (Computer Science, Psychology, Mechanical Engineering, English Literature, Finance, Biology)
-- 2 Faculty Members
-- 2 Events (Open House, Commencement)
-- 2 News Articles
-- 2 Static Pages (About, Admissions)
-
-### 6. Start development
+### 3. Start development
 
 ```bash
 npm run dev
 ```
 
 Visit [http://localhost:3000](http://localhost:3000)
+
+---
+
+## Manual Setup
+
+If you prefer to run each step manually:
+
+<details>
+<summary>Click to expand manual setup steps</summary>
+
+### Authenticate with Decoupled.io
+
+```bash
+npx decoupled-cli@latest auth login
+```
+
+### Create a Drupal space
+
+```bash
+npx decoupled-cli@latest spaces create "My University"
+```
+
+Note the space ID returned (e.g., `Space ID: 1234`). Wait ~90 seconds for provisioning.
+
+### Configure environment
+
+```bash
+npx decoupled-cli@latest spaces env 1234 --write .env.local
+```
+
+### Import content
+
+```bash
+npm run setup-content
+```
+
+This imports:
+- Homepage with statistics and CTAs
+- 6 Academic Programs
+- 2 Faculty Members
+- 2 Events
+- 2 News Articles
+- 2 Static Pages
+
+</details>
 
 ## Content Types
 
