@@ -112,27 +112,22 @@ async function waitForSpace(spaceId: number, maxWaitSeconds = 120): Promise<bool
   while ((Date.now() - startTime) / 1000 < maxWaitSeconds) {
     const elapsed = Math.floor((Date.now() - startTime) / 1000);
     const spinner = spinnerChars[spinnerIdx % spinnerChars.length];
-    process.stdout.write(`\r${COLORS.cyan}${spinner}${COLORS.reset} Waiting for space to be ready... (${elapsed}s)`);
+    process.stdout.write(`\r${COLORS.cyan}${spinner}${COLORS.reset} Waiting for space to be ready... (${elapsed}s / ${maxWaitSeconds}s)`);
     spinnerIdx++;
 
-    const result = runCommandSync(`npx decoupled-cli@latest spaces show ${spaceId} --json 2>/dev/null`);
+    // Silent status check
+    const result = runCommandSync(`npx decoupled-cli@latest spaces show ${spaceId} 2>/dev/null`);
 
-    if (result.success) {
-      try {
-        const data = JSON.parse(result.output);
-        if (data.status === 'active' || data.drupalSiteStatus === 'active') {
-          process.stdout.write(`\r${COLORS.green}✓${COLORS.reset} Space is ready!                              \n`);
-          return true;
-        }
-      } catch {
-        // JSON parse failed, continue waiting
-      }
+    // Check for "active" in the output (handles both text and JSON formats)
+    if (result.success && result.output.includes('active')) {
+      process.stdout.write(`\r${COLORS.green}✓${COLORS.reset} Space is ready!                                    \n`);
+      return true;
     }
 
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 5000));
   }
 
-  process.stdout.write(`\r${COLORS.red}✗${COLORS.reset} Timeout waiting for space                    \n`);
+  process.stdout.write(`\r${COLORS.red}✗${COLORS.reset} Timeout waiting for space (${maxWaitSeconds}s)              \n`);
   return false;
 }
 
