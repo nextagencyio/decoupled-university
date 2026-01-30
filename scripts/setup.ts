@@ -116,10 +116,10 @@ async function waitForSpace(spaceId: number, maxWaitSeconds = 200): Promise<bool
     spinnerIdx++;
 
     // Silent status check
-    const result = runCommandSync(`npx decoupled-cli@latest spaces show ${spaceId} 2>/dev/null`);
+    const result = runCommandSync(`npx decoupled-cli@latest spaces status ${spaceId} 2>/dev/null`);
 
-    // Check for "active" in the output (handles both text and JSON formats)
-    if (result.success && result.output.includes('active')) {
+    // Check for "Ready: Yes" in the output
+    if (result.success && result.output.includes('Ready: Yes')) {
       process.stdout.write(`\r${COLORS.green}✓${COLORS.reset} Space is ready!                                    \n`);
       return true;
     }
