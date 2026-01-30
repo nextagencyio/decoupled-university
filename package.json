@@ -24,7 +24,7 @@
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
     "lucide-react": "^0.539.0",
-    "next": "^16.1.1",
+    "next": "^16.1.6",
     "node-fetch": "^3.3.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -36,7 +36,7 @@
     "autoprefixer": "^10.4.20",
     "decoupled-cli": "^2.2.1",
     "eslint": "^9",
-    "eslint-config-next": "^16.1.1",
+    "eslint-config-next": "^16.1.6",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.20.4",
