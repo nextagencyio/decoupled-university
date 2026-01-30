@@ -77,9 +77,7 @@ export default async function GenericPage({ params }: { params: Promise<{ slug: 
                 <ResponsiveImage
                   image={image}
                   alt={image.alt || title}
-                  context="hero"
                   className="rounded-t-lg"
-                  maxHeight="60vh"
                   priority={true}
                 />
               )}

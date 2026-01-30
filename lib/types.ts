@@ -97,6 +97,7 @@ export interface FacultyData {
 export interface DrupalEvent extends DrupalNode {
   body?: {
     processed: string
+    summary?: string
   }
   eventDate?: {
     timestamp: number
