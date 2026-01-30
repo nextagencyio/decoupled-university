@@ -181,28 +181,21 @@ ${COLORS.bright}╔════════════════════�
 
   log(`\nCreating space "${spaceName}"...`, 'dim');
 
-  const createResult = runCommandSync(`npx decoupled-cli@latest spaces create "${spaceName}" --json 2>&1`);
+  const createResult = runCommandSync(`npx decoupled-cli@latest spaces create "${spaceName}" 2>&1`);
 
   let spaceId: number | null = null;
   let spaceUrl: string | null = null;
 
-  if (createResult.success) {
-    try {
-      // Try to parse JSON from output
-      const jsonMatch = createResult.output.match(/\{[\s\S]*\}/);
-      if (jsonMatch) {
-        const data = JSON.parse(jsonMatch[0]);
-        spaceId = data.id || data.space?.id;
-        spaceUrl = data.drupalSiteUrl || data.space?.drupalSiteUrl;
-      }
-    } catch {
-      // Try to extract space ID from text output
-      const idMatch = createResult.output.match(/Space ID:\s*(\d+)/i) ||
-                      createResult.output.match(/id[:\s]+(\d+)/i);
-      if (idMatch) {
-        spaceId = parseInt(idMatch[1], 10);
-      }
-    }
+  // Parse the text output - look for "Space ID: 1234" pattern
+  const idMatch = createResult.output.match(/Space ID:\s*(\d+)/i);
+  if (idMatch) {
+    spaceId = parseInt(idMatch[1], 10);
+  }
+
+  // Also try to extract the machine name URL if present
+  const machineMatch = createResult.output.match(/Machine Name:\s*(\w+)/i);
+  if (machineMatch) {
+    spaceUrl = `https://${machineMatch[1]}.decoupled.website`;
   }
 
   if (!spaceId) {
