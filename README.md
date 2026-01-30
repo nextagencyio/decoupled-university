@@ -22,23 +22,33 @@ cd my-university
 npm install
 ```
 
-### 2. Create a Drupal space
+### 2. Authenticate with Decoupled.io
 
-Go to [dashboard.decoupled.io](https://dashboard.decoupled.io) and create a new space.
-
-### 3. Configure environment
-
-Copy the OAuth credentials from your Drupal admin panel to `.env.local`:
-
-```env
-NEXT_PUBLIC_DRUPAL_BASE_URL=https://your-site.decoupled.website
-NEXT_IMAGE_DOMAIN=your-site.decoupled.website
-DRUPAL_CLIENT_ID=your_client_id
-DRUPAL_CLIENT_SECRET=your_client_secret
-DRUPAL_REVALIDATE_SECRET=your_revalidate_secret
+```bash
+npx decoupled-cli auth login
 ```
 
-### 4. Import content
+This opens a browser to authenticate with your Decoupled.io account.
+
+### 3. Create a Drupal space
+
+```bash
+npx decoupled-cli spaces create "My University"
+```
+
+Note the space ID returned (e.g., `Space ID: 1234`). Wait ~90 seconds for provisioning.
+
+### 4. Configure environment
+
+Fetch OAuth credentials and save to `.env.local`:
+
+```bash
+npx decoupled-cli spaces env 1234 --write .env.local
+```
+
+Or manually copy from [dashboard.decoupled.io](https://dashboard.decoupled.io).
+
+### 5. Import content
 
 ```bash
 npm run setup-content
@@ -52,7 +62,7 @@ This imports the university content types and sample content:
 - 2 News Articles
 - 2 Static Pages (About, Admissions)
 
-### 5. Start development
+### 6. Start development
 
 ```bash
 npm run dev
