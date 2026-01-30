@@ -134,9 +134,9 @@ async function waitForSpace(spaceId: number, maxWaitSeconds = 200): Promise<bool
 async function main() {
   console.log(`
 ${COLORS.cyan}╔════════════════════════════════════════════════════╗
-║                                                      ║
-║      Decoupled University - Interactive Setup        ║
-║                                                      ║
+║                                                    ║
+║     Decoupled University - Interactive Setup       ║
+║                                                    ║
 ╚════════════════════════════════════════════════════╝${COLORS.reset}
 `);
 
@@ -268,9 +268,9 @@ ${COLORS.cyan}╔═════════════════════
   // Done!
   console.log(`
 ${COLORS.green}╔════════════════════════════════════════════════════╗
-║                                                      ║
-║               Setup Complete!                        ║
-║                                                      ║
+║                                                    ║
+║                  Setup Complete!                   ║
+║                                                    ║
 ╚════════════════════════════════════════════════════╝${COLORS.reset}
 
 ${COLORS.bright}Next steps:${COLORS.reset}
