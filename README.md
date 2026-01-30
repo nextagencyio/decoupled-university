@@ -2,6 +2,8 @@
 
 A university website starter template for Decoupled Drupal + Next.js. Built for colleges, universities, and educational institutions.
 
+![Decoupled University Screenshot](docs/screenshot.png)
+
 ## Features
 
 - **Academic Programs** - Showcase degree programs with details, requirements, and highlights
