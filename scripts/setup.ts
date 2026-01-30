@@ -102,7 +102,7 @@ async function checkAuth(): Promise<boolean> {
   return result.success && !result.output.includes('not authenticated');
 }
 
-async function waitForSpace(spaceId: number, maxWaitSeconds = 120): Promise<boolean> {
+async function waitForSpace(spaceId: number, maxWaitSeconds = 200): Promise<boolean> {
   const startTime = Date.now();
   const spinnerChars = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'];
   let spinnerIdx = 0;
