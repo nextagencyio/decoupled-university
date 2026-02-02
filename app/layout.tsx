@@ -1,5 +1,6 @@
 import './globals.css'
 import ApolloProvider from './components/providers/ApolloProvider'
+// DEMO MODE: Remove this import and <DemoModeBanner /> below for production-only builds
 import { DemoModeBanner } from './components/DemoModeBanner'
 import { Viewport, type Metadata } from 'next'
 

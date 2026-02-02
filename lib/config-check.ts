@@ -1,3 +1,5 @@
+import { isDemoMode } from './demo-mode'
+
 export interface ConfigStatus {
   isConfigured: boolean
   missingVars: string[]
@@ -6,11 +8,8 @@ export interface ConfigStatus {
 }
 
 export function checkConfiguration(): ConfigStatus {
-  // Check if demo mode is enabled
-  const isDemoMode = process.env.NEXT_PUBLIC_DEMO_MODE === 'true'
-
-  // In demo mode, we don't need Drupal environment variables
-  if (isDemoMode) {
+  // Check if demo mode is enabled (remove this check for production-only builds)
+  if (isDemoMode()) {
     return {
       isConfigured: true,
       missingVars: [],

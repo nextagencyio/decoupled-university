@@ -1,12 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-
-// Import mock data directly for serverless compatibility
-import homepageData from '@/data/mock/homepage.json'
-import programsData from '@/data/mock/programs.json'
-import facultyData from '@/data/mock/faculty.json'
-import eventsData from '@/data/mock/events.json'
-import newsData from '@/data/mock/news.json'
-import routesData from '@/data/mock/routes.json'
+import { isDemoMode, handleMockQuery } from '@/lib/demo-mode'
 
 interface TokenCache {
   token: string | null
@@ -16,79 +9,6 @@ interface TokenCache {
 let tokenCache: TokenCache = {
   token: null,
   expiresAt: null,
-}
-
-// Check if demo mode is enabled
-function isDemoMode(): boolean {
-  return process.env.NEXT_PUBLIC_DEMO_MODE === 'true'
-}
-
-// Mock data map for easy lookup
-const mockDataMap: Record<string, any> = {
-  'homepage.json': homepageData,
-  'programs.json': programsData,
-  'faculty.json': facultyData,
-  'events.json': eventsData,
-  'news.json': newsData,
-  'routes.json': routesData,
-}
-
-// Load mock data from imported JSON
-function loadMockData(filename: string): any {
-  return mockDataMap[filename] || null
-}
-
-// Handle mock GraphQL queries
-function handleMockQuery(body: string): any {
-  try {
-    const { query, variables } = JSON.parse(body)
-
-    // Handle route queries FIRST (for individual detail pages)
-    // This must come before listing queries to avoid false matches like GetNewsByPath matching GetNews
-    if (variables?.path) {
-      const routePath = variables.path
-      const routes = loadMockData('routes.json')
-      if (routes && routes[routePath]) {
-        return routes[routePath]
-      }
-    }
-
-    // Determine which mock data to return based on the query
-    if (query.includes('GetHomepageData') || query.includes('nodeHomepages')) {
-      return loadMockData('homepage.json')
-    }
-
-    if (query.includes('GetPrograms') || (query.includes('nodePrograms') && !query.includes('route'))) {
-      return loadMockData('programs.json')
-    }
-
-    if (query.includes('GetFeaturedPrograms')) {
-      const programs = JSON.parse(JSON.stringify(loadMockData('programs.json')))
-      if (programs?.data?.nodePrograms?.nodes) {
-        // Return only first 3 for featured
-        programs.data.nodePrograms.nodes = programs.data.nodePrograms.nodes.slice(0, 3)
-      }
-      return programs
-    }
-
-    if (query.includes('GetFaculty') || query.includes('nodeFaculties')) {
-      return loadMockData('faculty.json')
-    }
-
-    if (query.includes('GetEvents') || query.includes('GetUpcomingEvents') || query.includes('nodeEvents')) {
-      return loadMockData('events.json')
-    }
-
-    if (query.includes('GetNews') || query.includes('GetFeaturedNews') || query.includes('nodeNewsItems')) {
-      return loadMockData('news.json')
-    }
-
-    // Return empty data for unmatched queries
-    return { data: {} }
-  } catch (error) {
-    console.error('Mock query error:', error)
-    return { data: {}, errors: [{ message: 'Mock data error' }] }
-  }
 }
 
 async function getAccessToken(): Promise<string | null> {
@@ -144,7 +64,7 @@ async function getAccessToken(): Promise<string | null> {
 }
 
 export async function POST(request: NextRequest) {
-  // Demo mode - serve mock data
+  // Demo mode - serve mock data (remove this block for production-only builds)
   if (isDemoMode()) {
     try {
       const body = await request.text()

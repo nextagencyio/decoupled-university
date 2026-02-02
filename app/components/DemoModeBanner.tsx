@@ -1,5 +1,12 @@
 'use client'
 
+/**
+ * Demo Mode Banner Component
+ *
+ * DELETE THIS FILE when removing demo mode from a real project.
+ * Also remove the <DemoModeBanner /> from app/layout.tsx
+ */
+
 import { AlertTriangle, X } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
