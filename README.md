@@ -128,10 +128,46 @@ Modify `data/university-content.json` to add or change content types and sample 
 ### Components
 React components are in `app/components/`. Update them to match your design needs.
 
+## Demo Mode
+
+Demo mode allows you to showcase the application without connecting to a Drupal backend. It displays mock content for the homepage, programs, faculty, events, and news.
+
+### Enable Demo Mode
+
+Set the environment variable:
+
+```bash
+NEXT_PUBLIC_DEMO_MODE=true
+```
+
+Or add to `.env.local`:
+```
+NEXT_PUBLIC_DEMO_MODE=true
+```
+
+### What Demo Mode Does
+
+- Shows a "Demo Mode" banner at the top of the page
+- Returns mock data for all GraphQL queries
+- Displays sample programs, faculty, events, and news
+- No Drupal backend required
+
+### Removing Demo Mode
+
+To convert to a production app with real data:
+
+1. Delete `lib/demo-mode.ts`
+2. Delete `data/mock/` directory
+3. Delete `app/components/DemoModeBanner.tsx`
+4. Remove `DemoModeBanner` from `app/layout.tsx`
+5. Remove demo mode checks from `app/api/graphql/route.ts`
+
 ## Deployment
 
 ### Vercel (Recommended)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nextagencyio/decoupled-university)
+
+Set `NEXT_PUBLIC_DEMO_MODE=true` in Vercel environment variables for a demo deployment.
 
 ### Other Platforms
 Works with any Node.js hosting platform that supports Next.js.
