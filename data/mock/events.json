@@ -1,0 +1,96 @@
+{
+  "data": {
+    "nodeEvents": {
+      "nodes": [
+        {
+          "__typename": "NodeEvent",
+          "id": "event-1",
+          "title": "Commencement Ceremony 2026",
+          "path": "/events/commencement-2026",
+          "body": {
+            "processed": "<p>Join us as we celebrate the achievements of the Class of 2026. The ceremony will feature keynote speaker Dr. Maya Chen, Nobel laureate and distinguished alumna.</p><p>Tickets are required for guests. Each graduate receives 4 complimentary tickets.</p>",
+            "summary": "Join us as we celebrate the achievements of the Class of 2026."
+          },
+          "eventDate": {
+            "timestamp": 1779530400
+          },
+          "endDate": {
+            "timestamp": 1779541200
+          },
+          "location": "University Stadium",
+          "eventType": [
+            {
+              "id": "type-1",
+              "name": "Ceremony"
+            }
+          ],
+          "registrationUrl": null,
+          "image": {
+            "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80",
+            "alt": "Commencement Ceremony 2026",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              {
+                "name": "LARGE",
+                "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80",
+                "width": 800,
+                "height": 533
+              },
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=480&q=80",
+                "width": 480,
+                "height": 320
+              }
+            ]
+          }
+        },
+        {
+          "__typename": "NodeEvent",
+          "id": "event-2",
+          "title": "Spring Open House",
+          "path": "/events/spring-open-house",
+          "body": {
+            "processed": "<p>Explore our beautiful campus, meet with faculty and current students, and learn about our academic programs. Campus tours depart every 30 minutes from the Welcome Center.</p><h2>Schedule</h2><ul><li>9:00 AM - Registration & Welcome</li><li>9:30 AM - Campus Tours Begin</li><li>11:00 AM - Academic Fair</li><li>12:00 PM - Lunch with Students</li><li>1:30 PM - Financial Aid Workshop</li><li>3:00 PM - Closing Remarks</li></ul>",
+            "summary": "Explore our beautiful campus, meet with faculty and current students."
+          },
+          "eventDate": {
+            "timestamp": 1776506400
+          },
+          "endDate": {
+            "timestamp": 1776528000
+          },
+          "location": "Student Union Building",
+          "eventType": [
+            {
+              "id": "type-2",
+              "name": "Admissions"
+            }
+          ],
+          "registrationUrl": "https://stateuniversity.edu/register/open-house",
+          "image": {
+            "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
+            "alt": "Spring Open House",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              {
+                "name": "LARGE",
+                "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
+                "width": 800,
+                "height": 533
+              },
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=480&q=80",
+                "width": 480,
+                "height": 320
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

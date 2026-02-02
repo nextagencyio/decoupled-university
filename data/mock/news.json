@@ -1,0 +1,104 @@
+{
+  "data": {
+    "nodeNewsItems": {
+      "nodes": [
+        {
+          "__typename": "NodeNews",
+          "id": "news-1",
+          "title": "State University Ranked in Top 50 Nationally",
+          "path": "/news/top-50-ranking",
+          "created": {
+            "timestamp": 1738454400
+          },
+          "body": {
+            "processed": "<p>U.S. News & World Report has ranked State University among the top 50 public universities in the nation, up five spots from last year. The ranking recognizes our commitment to academic excellence, research innovation, and student success.</p><p>Key factors contributing to the improved ranking include higher graduation rates, increased research funding, and strong alumni giving.</p>",
+            "summary": "U.S. News & World Report has ranked State University among the top 50 public universities."
+          },
+          "image": {
+            "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+            "alt": "State University Ranked in Top 50 Nationally",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              {
+                "name": "LARGE",
+                "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+                "width": 800,
+                "height": 533
+              },
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=480&q=80",
+                "width": 480,
+                "height": 320
+              },
+              {
+                "name": "THUMBNAIL",
+                "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=150&q=80",
+                "width": 150,
+                "height": 150
+              }
+            ]
+          },
+          "category": [
+            {
+              "id": "cat-1",
+              "name": "Announcements"
+            }
+          ],
+          "featured": true
+        },
+        {
+          "__typename": "NodeNews",
+          "id": "news-2",
+          "title": "University Receives $50M Research Grant",
+          "path": "/news/research-grant-announcement",
+          "created": {
+            "timestamp": 1738368000
+          },
+          "body": {
+            "processed": "<p>State University has been awarded a $50 million grant from the National Science Foundation to establish a new Center for Climate Research. The center will bring together scientists from multiple disciplines to study climate change impacts and develop innovative solutions.</p><p>\"This grant represents a tremendous opportunity to make a real difference in addressing one of the most pressing challenges of our time,\" said University President Dr. James Williams.</p><p>The center is expected to create 100 new research positions and provide funding for 50 graduate fellowships over the next five years.</p>",
+            "summary": "State University has been awarded a $50 million grant from the National Science Foundation."
+          },
+          "image": {
+            "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+            "alt": "University Receives $50M Research Grant",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              {
+                "name": "LARGE",
+                "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+                "width": 800,
+                "height": 533
+              },
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=480&q=80",
+                "width": 480,
+                "height": 320
+              },
+              {
+                "name": "THUMBNAIL",
+                "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=150&q=80",
+                "width": 150,
+                "height": 150
+              }
+            ]
+          },
+          "category": [
+            {
+              "id": "cat-2",
+              "name": "Research"
+            },
+            {
+              "id": "cat-1",
+              "name": "Announcements"
+            }
+          ],
+          "featured": true
+        }
+      ]
+    }
+  }
+}

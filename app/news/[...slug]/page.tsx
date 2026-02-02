@@ -129,7 +129,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Featured Image */}
           {news.image?.url && (
-            <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-lg mb-8 -mt-16">
+            <div className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-lg mb-8">
               <ResponsiveImage
                 src={news.image.url}
                 alt={news.image.alt || news.title}

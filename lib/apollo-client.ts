@@ -54,7 +54,12 @@ export function getServerApolloClient(requestHeaders: Headers): ApolloClient<any
 
   return new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      possibleTypes: {
+        TermInterface: ['TermDepartment', 'TermCategory', 'TermTags'],
+        NodeInterface: ['NodeProgram', 'NodeFaculty', 'NodeEvent', 'NodeNews', 'NodePage', 'NodeHomepage'],
+      },
+    }),
     defaultOptions: {
       watchQuery: {
         errorPolicy: 'ignore',
@@ -80,10 +85,17 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
+const possibleTypesConfig = {
+  possibleTypes: {
+    TermInterface: ['TermDepartment', 'TermCategory', 'TermTags'],
+    NodeInterface: ['NodeProgram', 'NodeFaculty', 'NodeEvent', 'NodeNews', 'NodePage', 'NodeHomepage'],
+  },
+}
+
 const client = typeof window !== 'undefined'
   ? (browserClient || (browserClient = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache(possibleTypesConfig),
     defaultOptions: {
       watchQuery: {
         errorPolicy: 'ignore',
@@ -95,7 +107,7 @@ const client = typeof window !== 'undefined'
   })))
   : new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache(possibleTypesConfig),
     defaultOptions: {
       watchQuery: {
         errorPolicy: 'ignore',

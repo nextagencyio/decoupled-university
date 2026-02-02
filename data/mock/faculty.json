@@ -1,0 +1,104 @@
+{
+  "data": {
+    "nodeFaculties": {
+      "nodes": [
+        {
+          "__typename": "NodeFaculty",
+          "id": "faculty-1",
+          "title": "Dr. Michael Johnson",
+          "path": "/faculty/dr-michael-johnson",
+          "body": {
+            "processed": "<p>Dr. Johnson specializes in organizational behavior and leadership development. He has consulted for Fortune 500 companies and brings real-world business experience to the classroom.</p>"
+          },
+          "position": "Associate Professor of Management",
+          "department": [
+            {
+              "id": "dept-3",
+              "name": "Business"
+            }
+          ],
+          "email": "mjohnson@stateuniversity.edu",
+          "phone": "(555) 234-5678",
+          "office": "Business School, Room 415",
+          "photo": {
+            "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+            "alt": "Dr. Michael Johnson - Faculty Photo",
+            "width": 400,
+            "height": 400,
+            "variations": [
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+                "width": 400,
+                "height": 400
+              },
+              {
+                "name": "THUMBNAIL",
+                "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
+                "width": 150,
+                "height": 150
+              }
+            ]
+          },
+          "researchInterests": [
+            "Leadership",
+            "Organizational Behavior",
+            "Team Dynamics",
+            "Corporate Culture"
+          ],
+          "education": {
+            "processed": "<p><strong>Ph.D. in Management</strong>, Harvard Business School, 2012<br/><strong>MBA</strong>, Wharton School, 2006<br/><strong>B.A. in Economics</strong>, Yale University, 2004</p>"
+          }
+        },
+        {
+          "__typename": "NodeFaculty",
+          "id": "faculty-2",
+          "title": "Dr. Sarah Smith",
+          "path": "/faculty/dr-sarah-smith",
+          "body": {
+            "processed": "<p>Dr. Smith is a leading researcher in artificial intelligence and machine learning. Her work on neural networks has been published in top-tier journals and has applications in healthcare, finance, and autonomous systems.</p>"
+          },
+          "position": "Professor of Computer Science",
+          "department": [
+            {
+              "id": "dept-2",
+              "name": "Engineering"
+            }
+          ],
+          "email": "ssmith@stateuniversity.edu",
+          "phone": "(555) 123-4567",
+          "office": "Engineering Building, Room 302",
+          "photo": {
+            "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+            "alt": "Dr. Sarah Smith - Faculty Photo",
+            "width": 400,
+            "height": 400,
+            "variations": [
+              {
+                "name": "MEDIUM",
+                "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+                "width": 400,
+                "height": 400
+              },
+              {
+                "name": "THUMBNAIL",
+                "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&q=80",
+                "width": 150,
+                "height": 150
+              }
+            ]
+          },
+          "researchInterests": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Neural Networks",
+            "Computer Vision"
+          ],
+          "education": {
+            "processed": "<p><strong>Ph.D. in Computer Science</strong>, MIT, 2008<br/><strong>M.S. in Computer Science</strong>, Stanford University, 2004<br/><strong>B.S. in Mathematics</strong>, UC Berkeley, 2002</p>"
+          }
+        }
+      ]
+    }
+  }
+}

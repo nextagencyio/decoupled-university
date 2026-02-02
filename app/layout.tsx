@@ -1,5 +1,6 @@
 import './globals.css'
 import ApolloProvider from './components/providers/ApolloProvider'
+import { DemoModeBanner } from './components/DemoModeBanner'
 import { Viewport, type Metadata } from 'next'
 
 export const viewport: Viewport = {
@@ -69,6 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
+        <DemoModeBanner />
         <ApolloProvider>
           {children}
         </ApolloProvider>

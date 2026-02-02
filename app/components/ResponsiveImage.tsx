@@ -25,6 +25,13 @@ interface ResponsiveImageProps {
 }
 
 function getProxiedUrl(url: string): string {
+  // External URLs (like Unsplash) should be used as-is
+  if (url.startsWith('https://images.unsplash.com') ||
+      url.startsWith('https://unsplash.com') ||
+      !url.includes('/sites/')) {
+    return url
+  }
+
   // Convert absolute Drupal URLs to use the local proxy
   // http://ted3nea.decoupled.website/sites/default/files/... -> /sites/default/files/...
   let processedUrl = url
