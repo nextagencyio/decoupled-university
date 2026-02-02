@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { promises as fs } from 'fs'
-import path from 'path'
+
+// Import mock data directly for serverless compatibility
+import homepageData from '@/data/mock/homepage.json'
+import programsData from '@/data/mock/programs.json'
+import facultyData from '@/data/mock/faculty.json'
+import eventsData from '@/data/mock/events.json'
+import newsData from '@/data/mock/news.json'
+import routesData from '@/data/mock/routes.json'
 
 interface TokenCache {
   token: string | null
@@ -17,19 +23,23 @@ function isDemoMode(): boolean {
   return process.env.NEXT_PUBLIC_DEMO_MODE === 'true'
 }
 
-// Load mock data from JSON files
-async function loadMockData(filename: string): Promise<any> {
-  const mockPath = path.join(process.cwd(), 'data', 'mock', filename)
-  try {
-    const data = await fs.readFile(mockPath, 'utf-8')
-    return JSON.parse(data)
-  } catch {
-    return null
-  }
+// Mock data map for easy lookup
+const mockDataMap: Record<string, any> = {
+  'homepage.json': homepageData,
+  'programs.json': programsData,
+  'faculty.json': facultyData,
+  'events.json': eventsData,
+  'news.json': newsData,
+  'routes.json': routesData,
+}
+
+// Load mock data from imported JSON
+function loadMockData(filename: string): any {
+  return mockDataMap[filename] || null
 }
 
 // Handle mock GraphQL queries
-async function handleMockQuery(body: string): Promise<any> {
+function handleMockQuery(body: string): any {
   try {
     const { query, variables } = JSON.parse(body)
 
@@ -37,7 +47,7 @@ async function handleMockQuery(body: string): Promise<any> {
     // This must come before listing queries to avoid false matches like GetNewsByPath matching GetNews
     if (variables?.path) {
       const routePath = variables.path
-      const routes = await loadMockData('routes.json')
+      const routes = loadMockData('routes.json')
       if (routes && routes[routePath]) {
         return routes[routePath]
       }
@@ -45,15 +55,15 @@ async function handleMockQuery(body: string): Promise<any> {
 
     // Determine which mock data to return based on the query
     if (query.includes('GetHomepageData') || query.includes('nodeHomepages')) {
-      return await loadMockData('homepage.json')
+      return loadMockData('homepage.json')
     }
 
     if (query.includes('GetPrograms') || (query.includes('nodePrograms') && !query.includes('route'))) {
-      return await loadMockData('programs.json')
+      return loadMockData('programs.json')
     }
 
     if (query.includes('GetFeaturedPrograms')) {
-      const programs = await loadMockData('programs.json')
+      const programs = JSON.parse(JSON.stringify(loadMockData('programs.json')))
       if (programs?.data?.nodePrograms?.nodes) {
         // Return only first 3 for featured
         programs.data.nodePrograms.nodes = programs.data.nodePrograms.nodes.slice(0, 3)
@@ -62,15 +72,15 @@ async function handleMockQuery(body: string): Promise<any> {
     }
 
     if (query.includes('GetFaculty') || query.includes('nodeFaculties')) {
-      return await loadMockData('faculty.json')
+      return loadMockData('faculty.json')
     }
 
     if (query.includes('GetEvents') || query.includes('GetUpcomingEvents') || query.includes('nodeEvents')) {
-      return await loadMockData('events.json')
+      return loadMockData('events.json')
     }
 
     if (query.includes('GetNews') || query.includes('GetFeaturedNews') || query.includes('nodeNewsItems')) {
-      return await loadMockData('news.json')
+      return loadMockData('news.json')
     }
 
     // Return empty data for unmatched queries
@@ -138,7 +148,7 @@ export async function POST(request: NextRequest) {
   if (isDemoMode()) {
     try {
       const body = await request.text()
-      const mockData = await handleMockQuery(body)
+      const mockData = handleMockQuery(body)
 
       return NextResponse.json(mockData, {
         status: 200,
