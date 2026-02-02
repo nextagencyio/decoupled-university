@@ -1,0 +1,55 @@
+{
+  "data": {
+    "nodeHomepages": {
+      "__typename": "NodeHomepageConnection",
+      "nodes": [
+        {
+          "__typename": "NodeHomepage",
+          "id": "1",
+          "title": "Welcome to State University",
+          "path": "/homepage",
+          "heroTitle": "Shape Your Future",
+          "heroSubtitle": "Where Excellence Meets Opportunity",
+          "heroDescription": {
+            "__typename": "Text",
+            "processed": "<p>Join a community of scholars, innovators, and leaders. Our world-class faculty and cutting-edge facilities prepare you for success in an ever-changing world.</p>"
+          },
+          "statsItems": [
+            {
+              "__typename": "ParagraphStatItem",
+              "id": "stat-1",
+              "number": "15,000+",
+              "label": "Students"
+            },
+            {
+              "__typename": "ParagraphStatItem",
+              "id": "stat-2",
+              "number": "800+",
+              "label": "Faculty Members"
+            },
+            {
+              "__typename": "ParagraphStatItem",
+              "id": "stat-3",
+              "number": "120+",
+              "label": "Degree Programs"
+            },
+            {
+              "__typename": "ParagraphStatItem",
+              "id": "stat-4",
+              "number": "94%",
+              "label": "Graduate Employment Rate"
+            }
+          ],
+          "featuredProgramsTitle": "Explore Our Programs",
+          "ctaTitle": "Ready to Begin Your Journey?",
+          "ctaDescription": {
+            "__typename": "Text",
+            "processed": "<p>Applications for Fall 2026 are now open. Take the first step toward your future today.</p>"
+          },
+          "ctaPrimary": "Apply Now",
+          "ctaSecondary": "Request Information"
+        }
+      ]
+    }
+  }
+}

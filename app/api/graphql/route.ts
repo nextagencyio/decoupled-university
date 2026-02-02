@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { isDemoMode, handleMockQuery } from '@/lib/demo-mode'
 
 interface TokenCache {
   token: string | null
@@ -63,6 +64,28 @@ async function getAccessToken(): Promise<string | null> {
 }
 
 export async function POST(request: NextRequest) {
+  // Demo mode - serve mock data (remove this block for production-only builds)
+  if (isDemoMode()) {
+    try {
+      const body = await request.text()
+      const mockData = handleMockQuery(body)
+
+      return NextResponse.json(mockData, {
+        status: 200,
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Demo-Mode': 'true',
+        },
+      })
+    } catch (error) {
+      console.error('Demo mode error:', error)
+      return NextResponse.json(
+        { error: 'Demo mode error', details: error instanceof Error ? error.message : 'Unknown error' },
+        { status: 500 }
+      )
+    }
+  }
+
   // Check if required environment variables are configured
   if (!process.env.NEXT_PUBLIC_DRUPAL_BASE_URL ||
     !process.env.DRUPAL_CLIENT_ID ||

@@ -1,0 +1,436 @@
+{
+  "/programs/biology": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-1",
+          "title": "Biology",
+          "path": "/programs/biology",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Discover the science of life in our comprehensive Biology program. From molecular biology to ecology, students gain hands-on laboratory experience and prepare for careers in healthcare, research, or environmental science.</p><h2>Tracks</h2><ul><li>Pre-Medical</li><li>Molecular Biology</li><li>Ecology and Evolution</li><li>Biotechnology</li></ul>"
+          },
+          "degreeType": "Bachelor of Science",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-1", "name": "Arts & Sciences" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80",
+            "alt": "Biology",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-1", "icon": "flask", "title": "Research Opportunities", "description": { "__typename": "Text", "processed": "Work alongside world-renowned faculty on cutting-edge research projects." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-2", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } }
+          ]
+        }
+      }
+    }
+  },
+  "/programs/computer-science": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-2",
+          "title": "Computer Science",
+          "path": "/programs/computer-science",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Our Computer Science program prepares students for careers in software development, artificial intelligence, cybersecurity, and more. With state-of-the-art labs and industry partnerships, you'll gain hands-on experience with the latest technologies.</p><h2>What You'll Learn</h2><ul><li>Programming fundamentals and advanced algorithms</li><li>Machine learning and artificial intelligence</li><li>Software engineering best practices</li><li>Database design and cloud computing</li></ul>"
+          },
+          "degreeType": "Bachelor of Science",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-2", "name": "Engineering" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
+            "alt": "Computer Science",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-3", "icon": "flask", "title": "Research Opportunities", "description": { "__typename": "Text", "processed": "Work alongside world-renowned faculty on cutting-edge research projects." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-4", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-5", "icon": "globe", "title": "Global Network", "description": { "__typename": "Text", "processed": "Study abroad programs and partnerships with universities worldwide." } }
+          ]
+        }
+      }
+    }
+  },
+  "/programs/english-literature": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-3",
+          "title": "English Literature",
+          "path": "/programs/english-literature",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Immerse yourself in the world of literature, from classical texts to contemporary works. Our English Literature program develops critical thinking, analytical writing, and communication skills valued across industries.</p><h2>Areas of Study</h2><ul><li>British Literature</li><li>American Literature</li><li>Creative Writing</li><li>Literary Theory</li></ul>"
+          },
+          "degreeType": "Bachelor of Arts",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-1", "name": "Arts & Sciences" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
+            "alt": "English Literature",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-6", "icon": "globe", "title": "Global Network", "description": { "__typename": "Text", "processed": "Study abroad programs and partnerships with universities worldwide." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-7", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } }
+          ]
+        }
+      }
+    }
+  },
+  "/programs/finance": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-4",
+          "title": "Finance",
+          "path": "/programs/finance",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Build expertise in financial markets, investment analysis, and corporate finance. Our Finance program prepares students for careers in banking, investment management, and financial consulting.</p><h2>Key Topics</h2><ul><li>Investment Analysis</li><li>Corporate Finance</li><li>Financial Modeling</li><li>Risk Management</li></ul>"
+          },
+          "degreeType": "Bachelor of Science",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-3", "name": "Business" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
+            "alt": "Finance",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-8", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-9", "icon": "globe", "title": "Global Network", "description": { "__typename": "Text", "processed": "Study abroad programs and partnerships with universities worldwide." } }
+          ]
+        }
+      }
+    }
+  },
+  "/programs/mechanical-engineering": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-5",
+          "title": "Mechanical Engineering",
+          "path": "/programs/mechanical-engineering",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Design, build, and innovate with our ABET-accredited Mechanical Engineering program. From robotics to renewable energy, students learn to solve complex engineering challenges using cutting-edge tools and technologies.</p><h2>Specializations</h2><ul><li>Robotics and Automation</li><li>Thermal Systems</li><li>Manufacturing</li><li>Aerospace Applications</li></ul>"
+          },
+          "degreeType": "Bachelor of Science",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-2", "name": "Engineering" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80",
+            "alt": "Mechanical Engineering",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-10", "icon": "flask", "title": "Research Opportunities", "description": { "__typename": "Text", "processed": "Work alongside world-renowned faculty on cutting-edge research projects." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-11", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-12", "icon": "globe", "title": "Global Network", "description": { "__typename": "Text", "processed": "Study abroad programs and partnerships with universities worldwide." } }
+          ]
+        }
+      }
+    }
+  },
+  "/programs/psychology": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeProgram",
+          "id": "program-6",
+          "title": "Psychology",
+          "path": "/programs/psychology",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Explore the science of mind and behavior in our comprehensive Psychology program. Students gain a strong foundation in research methods, cognitive processes, and human development while preparing for careers in mental health, research, or graduate study.</p><h2>Areas of Focus</h2><ul><li>Clinical Psychology</li><li>Cognitive Neuroscience</li><li>Developmental Psychology</li><li>Social Psychology</li></ul>"
+          },
+          "degreeType": "Bachelor of Arts",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-1", "name": "Arts & Sciences" }],
+          "duration": "4 years",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=800&q=80",
+            "alt": "Psychology",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "highlights": [
+            { "__typename": "ParagraphHighlightItem", "id": "h-13", "icon": "flask", "title": "Research Opportunities", "description": { "__typename": "Text", "processed": "Work alongside world-renowned faculty on cutting-edge research projects." } },
+            { "__typename": "ParagraphHighlightItem", "id": "h-14", "icon": "briefcase", "title": "Career Services", "description": { "__typename": "Text", "processed": "Dedicated career counselors and industry connections help you land your dream job." } }
+          ]
+        }
+      }
+    }
+  },
+  "/faculty/dr-michael-johnson": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeFaculty",
+          "id": "faculty-1",
+          "title": "Dr. Michael Johnson",
+          "path": "/faculty/dr-michael-johnson",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Dr. Johnson specializes in organizational behavior and leadership development. He has consulted for Fortune 500 companies and brings real-world business experience to the classroom.</p>"
+          },
+          "position": "Associate Professor of Management",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-3", "name": "Business" }],
+          "email": "mjohnson@stateuniversity.edu",
+          "phone": "(555) 234-5678",
+          "office": "Business School, Room 415",
+          "photo": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+            "alt": "Dr. Michael Johnson",
+            "width": 400,
+            "height": 400,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80", "width": 400, "height": 400 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80", "width": 300, "height": 300 }
+            ]
+          },
+          "researchInterests": ["Leadership", "Organizational Behavior", "Team Dynamics", "Corporate Culture"],
+          "education": {
+            "__typename": "Text",
+            "processed": "<p><strong>Ph.D. in Management</strong>, Harvard Business School, 2012<br/><strong>MBA</strong>, Wharton School, 2006<br/><strong>B.A. in Economics</strong>, Yale University, 2004</p>"
+          }
+        }
+      }
+    }
+  },
+  "/faculty/dr-sarah-smith": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeFaculty",
+          "id": "faculty-2",
+          "title": "Dr. Sarah Smith",
+          "path": "/faculty/dr-sarah-smith",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Dr. Smith is a leading researcher in artificial intelligence and machine learning. Her work on neural networks has been published in top-tier journals and has applications in healthcare, finance, and autonomous systems.</p>"
+          },
+          "position": "Professor of Computer Science",
+          "department": [{ "__typename": "TermDepartment", "id": "dept-2", "name": "Engineering" }],
+          "email": "ssmith@stateuniversity.edu",
+          "phone": "(555) 123-4567",
+          "office": "Engineering Building, Room 302",
+          "photo": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+            "alt": "Dr. Sarah Smith",
+            "width": 400,
+            "height": 400,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80", "width": 400, "height": 400 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80", "width": 300, "height": 300 }
+            ]
+          },
+          "researchInterests": ["Artificial Intelligence", "Machine Learning", "Neural Networks", "Computer Vision"],
+          "education": {
+            "__typename": "Text",
+            "processed": "<p><strong>Ph.D. in Computer Science</strong>, MIT, 2008<br/><strong>M.S. in Computer Science</strong>, Stanford University, 2004<br/><strong>B.S. in Mathematics</strong>, UC Berkeley, 2002</p>"
+          }
+        }
+      }
+    }
+  },
+  "/news/top-50-ranking": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeNews",
+          "id": "news-1",
+          "title": "State University Ranked in Top 50 Nationally",
+          "path": "/news/top-50-ranking",
+          "created": { "__typename": "DateTime", "timestamp": 1738454400 },
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>State University has been ranked among the top 50 public universities in the nation by U.S. News & World Report. This marks the fifth consecutive year the university has appeared in the top 50.</p><p>\"This ranking reflects our commitment to academic excellence and the hard work of our faculty, staff, and students,\" said University President Dr. James Williams.</p><p>The ranking considers factors including graduation rates, faculty resources, expert opinion, financial resources, and alumni giving.</p>",
+            "summary": "U.S. News & World Report has ranked State University among the top 50 public universities."
+          },
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+            "alt": "State University Ranked in Top 50 Nationally",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1562774053-701939374585?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "category": [{ "__typename": "TermCategory", "id": "cat-1", "name": "Announcements" }],
+          "featured": true
+        }
+      }
+    }
+  },
+  "/news/research-grant-announcement": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeNews",
+          "id": "news-2",
+          "title": "University Receives $50M Research Grant",
+          "path": "/news/research-grant-announcement",
+          "created": { "__typename": "DateTime", "timestamp": 1738368000 },
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>State University has been awarded a $50 million grant from the National Science Foundation to establish a new Center for Climate Research. The center will bring together scientists from multiple disciplines to study climate change impacts and develop innovative solutions.</p><p>\"This grant represents a tremendous opportunity to make a real difference in addressing one of the most pressing challenges of our time,\" said University President Dr. James Williams.</p><p>The center is expected to create 100 new research positions and provide funding for 50 graduate fellowships over the next five years.</p>"
+          },
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
+            "alt": "University Receives $50M Research Grant",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          },
+          "category": [{ "__typename": "TermCategory", "id": "cat-2", "name": "Research" }, { "__typename": "TermCategory", "id": "cat-1", "name": "Announcements" }],
+          "featured": true
+        }
+      }
+    }
+  },
+  "/events/commencement-2026": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeEvent",
+          "id": "event-1",
+          "title": "Commencement Ceremony 2026",
+          "path": "/events/commencement-2026",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Join us as we celebrate the Class of 2026! The commencement ceremony will feature keynote speaker Dr. Jane Goodall, world-renowned primatologist and conservationist.</p><h2>Event Details</h2><ul><li>Doors open at 8:00 AM</li><li>Ceremony begins at 10:00 AM</li><li>Each graduate receives 4 guest tickets</li><li>Professional photography available</li></ul><h2>Parking</h2><p>Free parking is available in Lots A, B, and C. Shuttle service will run from parking lots to the stadium.</p>"
+          },
+          "eventDate": { "__typename": "DateTime", "timestamp": 1779530400 },
+          "endDate": { "__typename": "DateTime", "timestamp": 1779544800 },
+          "location": "University Stadium",
+          "eventType": [{ "__typename": "TermEventType", "id": "type-1", "name": "Ceremony" }],
+          "registrationUrl": null,
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80",
+            "alt": "Commencement Ceremony 2026",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "/events/spring-open-house": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodeEvent",
+          "id": "event-2",
+          "title": "Spring Open House",
+          "path": "/events/spring-open-house",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Explore our beautiful campus, meet with faculty and current students, and learn about our academic programs. Campus tours depart every 30 minutes from the Welcome Center.</p><h2>Schedule</h2><ul><li>9:00 AM - Registration & Welcome</li><li>9:30 AM - Campus Tours Begin</li><li>11:00 AM - Academic Fair</li><li>12:00 PM - Lunch with Students</li><li>1:30 PM - Financial Aid Workshop</li><li>3:00 PM - Closing Remarks</li></ul>"
+          },
+          "eventDate": { "__typename": "DateTime", "timestamp": 1776506400 },
+          "endDate": { "__typename": "DateTime", "timestamp": 1776528000 },
+          "location": "Student Union Building",
+          "eventType": [{ "__typename": "TermEventType", "id": "type-2", "name": "Admissions" }],
+          "registrationUrl": "https://stateuniversity.edu/register/open-house",
+          "image": {
+            "__typename": "Image",
+            "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80",
+            "alt": "Spring Open House",
+            "width": 800,
+            "height": 533,
+            "variations": [
+              { "name": "LARGE", "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&q=80", "width": 800, "height": 533 },
+              { "name": "MEDIUM", "url": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=480&q=80", "width": 480, "height": 320 }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "/about": {
+    "data": {
+      "route": {
+        "__typename": "RouteInternal",
+        "entity": {
+          "__typename": "NodePage",
+          "id": "page-1",
+          "title": "About State University",
+          "path": "/about",
+          "body": {
+            "__typename": "Text",
+            "processed": "<p>Founded in 1892, State University has grown from a small agricultural college to a comprehensive research university serving over 15,000 students. Our mission is to advance knowledge, foster creativity, and prepare students to be engaged citizens and leaders in their communities.</p><h2>Our Values</h2><ul><li><strong>Excellence</strong> - We pursue the highest standards in teaching, research, and service.</li><li><strong>Integrity</strong> - We act with honesty and ethical responsibility.</li><li><strong>Diversity</strong> - We embrace diverse perspectives and create an inclusive community.</li><li><strong>Innovation</strong> - We encourage creative thinking and bold ideas.</li></ul><h2>Accreditation</h2><p>State University is accredited by the Higher Learning Commission and holds specialized accreditations in engineering, business, nursing, and education.</p>"
+          }
+        }
+      }
+    }
+  }
+}
