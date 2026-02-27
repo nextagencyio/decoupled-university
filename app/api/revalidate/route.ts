@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { revalidatePath } from 'next/cache'
+import { revalidatePath, revalidateTag } from 'next/cache'
 
 export async function POST(request: NextRequest) {
   try {
@@ -40,9 +40,12 @@ export async function POST(request: NextRequest) {
     } else {
       path = `/${slug}`
     }
+    // Clear the Data Cache for all Drupal GraphQL fetches (expire immediately)
+    revalidateTag('drupal', { expire: 0 })
+    // Clear the Route Cache for the specific page
     revalidatePath(path)
 
-    console.log(`Revalidated path: ${path}`)
+    console.log(`Revalidated: ${path} (tag: drupal)`)
 
     return NextResponse.json({
       message: 'Page revalidated successfully',
