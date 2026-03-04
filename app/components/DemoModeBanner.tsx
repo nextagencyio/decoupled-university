@@ -16,7 +16,7 @@ export function DemoModeBanner() {
 
   useEffect(() => {
     // Check if demo mode is enabled
-    const demoMode = process.env.NEXT_PUBLIC_DEMO_MODE === 'true'
+    const demoMode = process.env.NEXT_PUBLIC_DEMO_MODE !== 'false'
     setIsVisible(demoMode)
 
     // Check if user dismissed the banner in this session
@@ -36,7 +36,7 @@ export function DemoModeBanner() {
   }
 
   return (
-    <div className="bg-amber-500 text-amber-950">
+    <div className="sticky top-0 z-[60] bg-amber-500 text-amber-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-sm font-medium">

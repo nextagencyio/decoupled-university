@@ -22,7 +22,7 @@ import routesData from '@/data/mock/routes.json'
  * Check if demo mode is enabled via environment variable
  */
 export function isDemoMode(): boolean {
-  return process.env.NEXT_PUBLIC_DEMO_MODE === 'true'
+  return process.env.NEXT_PUBLIC_DEMO_MODE !== 'false'
 }
 
 // Mock data map for query lookup
